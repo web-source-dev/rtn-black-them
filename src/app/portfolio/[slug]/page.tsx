@@ -21,7 +21,10 @@ type PageParams = {
 }
 
 // Generate metadata for each portfolio project page
-export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
+export async function generateMetadata(
+  props: { params: PageParams; searchParams: Record<string, string | string[]> }
+): Promise<Metadata> {
+  const { params } = props;
   const project = portfolioProjects.find((project) => project.slug === params.slug);
   
   if (!project) {
@@ -73,7 +76,10 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   };
 }
 
-export default async function ProjectDetailPage({ params }: { params: PageParams }) {
+export default function ProjectDetailPage(
+  props: { params: PageParams; searchParams: Record<string, string | string[]> }
+) {
+  const { params } = props;
   const slug = params.slug;
   
   // Find the current project data
