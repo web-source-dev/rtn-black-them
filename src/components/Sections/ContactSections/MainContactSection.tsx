@@ -64,9 +64,9 @@ export default function MainContactSection() {
                 
                 <div className="mt-12 flex items-center space-x-6">
                   <div className="flex -space-x-2">
-                    <Image src="https://randomuser.me/api/portraits/women/79.jpg" alt="Team member" className="w-10 h-10 rounded-full border-2 border-background" />
-                    <Image src="https://randomuser.me/api/portraits/men/54.jpg" alt="Team member" className="w-10 h-10 rounded-full border-2 border-background" />
-                    <Image src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team member" className="w-10 h-10 rounded-full border-2 border-background" />
+                    <Image src="https://randomuser.me/api/portraits/women/79.jpg" alt="Team member" className="w-10 h-10 rounded-full border-2 border-background" width={100} height={100}  />
+                    <Image src="https://randomuser.me/api/portraits/men/54.jpg" alt="Team member" className="w-10 h-10 rounded-full border-2 border-background" width={100} height={100}  />
+                    <Image src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team member" className="w-10 h-10 rounded-full border-2 border-background" width={100} height={100}  />
                     <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-medium border-2 border-background">+12</div>
                   </div>
                   <div className="text-sm text-foreground/80">Our team is ready to help you succeed</div>
@@ -80,11 +80,11 @@ export default function MainContactSection() {
             <div className="mt-16 lg:mt-24">
               <div className="text-center text-foreground/60 text-sm mb-4">TRUSTED BY INDUSTRY LEADERS</div>
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+1" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+2" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+3" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+4" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
-                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+5" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+1" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
+                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+2" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
+                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+3" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
+                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+4" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
+                <Image src="https://dummyimage.com/100x40/cccccc/666666&text=Company+5" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
               </div>
             </div>
           </RevealOnScroll>
@@ -211,6 +211,8 @@ export default function MainContactSection() {
                       src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
                       alt="San Francisco Office"
                       className="w-full h-full object-cover object-center"
+                      width={500}
+                      height={500}
                     />
                   </div>
                   <div className="p-6">
@@ -234,6 +236,8 @@ export default function MainContactSection() {
                       src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80" 
                       alt="New York Office"
                       className="w-full h-full object-cover object-center"
+                      width={500}
+                      height={500}
                     />
                   </div>
                   <div className="p-6">
@@ -257,6 +261,8 @@ export default function MainContactSection() {
                       src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
                       alt="London Office"
                       className="w-full h-full object-cover object-center"
+                      width={500}
+                      height={500}
                     />
                   </div>
                   <div className="p-6">

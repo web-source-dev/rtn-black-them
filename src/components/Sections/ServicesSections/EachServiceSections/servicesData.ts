@@ -26,6 +26,7 @@ export interface ServiceDetail {
     image?: string;
     link?: string;
   }[];
+  [key: string]: unknown; // Add index signature to allow additional properties
 }
 
 export const servicesData: ServiceDetail[] = [

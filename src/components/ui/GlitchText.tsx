@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from './utils';
 
@@ -43,7 +43,7 @@ export default function GlitchText({
   const glitchChars = '!<>-_\\/[]{}—=+*^?#________';
 
   // Function to create glitched version of text
-  const glitchText = (originalText: string) => {
+  const glitchText = useCallback((originalText: string) => {
     // Intensity determines how many characters get glitched
     const charsToGlitch = Math.max(1, Math.floor(originalText.length * (glitchIntensity / 10)));
     let glitchedStr = originalText;
@@ -60,10 +60,10 @@ export default function GlitchText({
     }
     
     return glitchedStr;
-  };
+  }, [glitchIntensity, glitchChars]);
 
   // Function to cleanup all timeouts
-  const cleanupTimeouts = () => {
+  const cleanupTimeouts = useCallback(() => {
     if (mainIntervalRef.current) {
       clearInterval(mainIntervalRef.current);
       mainIntervalRef.current = null;
@@ -78,10 +78,10 @@ export default function GlitchText({
       clearTimeout(resetTimeoutRef.current);
       resetTimeoutRef.current = null;
     }
-  };
+  }, []);
 
   // Function to start a glitch sequence
-  const startGlitchSequence = () => {
+  const startGlitchSequence = useCallback(() => {
     setIsGlitching(true);
     setGlitchId(prevId => prevId + 1);
     
@@ -113,7 +113,7 @@ export default function GlitchText({
         setIsGlitching(false);
       }
     }, glitchDuration / totalFrames);
-  };
+  }, [text, glitchDuration, glitchText]);
 
   useEffect(() => {
     // Update glitched text when original text changes
@@ -135,7 +135,7 @@ export default function GlitchText({
 
     // Clean up all intervals and timeouts on component unmount
     return cleanupTimeouts;
-  }, [active, isHovering, onHover, text, glitchDuration, glitchInterval, glitchIntensity]);
+  }, [active, isHovering, onHover, text, glitchDuration, glitchInterval, glitchIntensity, startGlitchSequence, cleanupTimeouts]);
 
   return (
     <div

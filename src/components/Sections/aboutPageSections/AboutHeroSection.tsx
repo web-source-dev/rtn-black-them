@@ -109,6 +109,8 @@ export default function AboutHeroSection({
                   src={imageUrl} 
                   alt="Our team at RTN Digital" 
                   className="w-full h-full object-cover"
+                  height={500}
+                        width={500}
                 />
               </div>
               
@@ -129,6 +131,8 @@ export default function AboutHeroSection({
                         src={`https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${i * 10 + 15}.jpg`} 
                         alt="Team member"
                         className="w-full h-full object-cover" 
+                        height={500}
+                        width={500}
                       />
                     </div>
                   ))}

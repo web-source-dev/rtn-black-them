@@ -22,6 +22,7 @@ export interface PortfolioProject {
     position: string;
   };
   projectLink?: string;
+  [key: string]: unknown;
 }
 
 const link = process.env.NEXT_PUBLIC_FRONTEND_URL;

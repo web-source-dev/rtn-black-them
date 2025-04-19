@@ -245,6 +245,8 @@ export default function MainTestimonialsSection() {
                   src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
                   alt="TechStart video testimonial thumbnail"
                   className="w-full h-full object-cover"
+                  width={800}
+                  height={800}
                 />
               </div>
               <div className="mt-4">
@@ -266,6 +268,8 @@ export default function MainTestimonialsSection() {
                   src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
                   alt="Artisan Collective video testimonial thumbnail"
                   className="w-full h-full object-cover"
+                  width={800}
+                  height={800}
                 />
               </div>
               <div className="mt-4">

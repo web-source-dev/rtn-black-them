@@ -22,6 +22,7 @@ interface MagneticGradientCardProps {
   borderStyle?: 'solid' | 'dashed' | 'flowing';
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  showGradient?: boolean;
 }
 
 export default function MagneticGradientCard({
@@ -39,7 +40,8 @@ export default function MagneticGradientCard({
   glowStrength = 0.5,
   borderStyle = 'flowing',
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  showGradient = false
 }: MagneticGradientCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -193,7 +195,7 @@ export default function MagneticGradientCard({
     <motion.div
       ref={cardRef}
       className={cn(
-        'relative overflow-hidden rounded-xl cursor-pointer',
+        'relative overflow-hidden rounded-xl cursor-pointer border border-gray-200/20',
         className
       )}
       animate={{ 
@@ -213,8 +215,8 @@ export default function MagneticGradientCard({
       onClick={onClick}
       whileTap={{ scale: 0.98 }}
     >
-      {/* Glow effect */}
-      {isHovered && (
+      {/* Glow effect - only shown if showGradient is true */}
+      {isHovered && showGradient && (
         <motion.div 
           className="absolute inset-0 -z-10 blur-xl opacity-0"
           style={{ 
@@ -230,24 +232,28 @@ export default function MagneticGradientCard({
         />
       )}
       
-      {/* Animated gradient border */}
-      <motion.div
-        className={cn(
-          'absolute inset-0 z-0 opacity-0',
-          isHovered ? 'opacity-100' : 'opacity-0',
-          borderClassName
-        )}
-        style={{
-          background: getGradient(),
-          backgroundSize: '400% 400%',
-        }}
-        animate={isHovered ? getBorderAnimation() : {}}
-        transition={getBorderTransition()}
-      />
+      {/* Animated gradient border - only shown if showGradient is true */}
+      {showGradient && (
+        <motion.div
+          className={cn(
+            'absolute inset-0 z-0 opacity-0',
+            isHovered ? 'opacity-100' : 'opacity-0',
+            borderClassName
+          )}
+          style={{
+            background: getGradient(),
+            backgroundSize: '400% 400%',
+            border : `1px solid var(--primary)`
+          }}
+          animate={isHovered ? getBorderAnimation() : {}}
+          transition={getBorderTransition()}
+        />
+      )}
       
       {/* Content container with inner shadow */}
       <div className={cn(
-        'relative z-10 bg-card m-[3px] rounded-lg h-full transition-all duration-300',
+        'relative z-10 bg-card rounded-lg h-full transition-all duration-300',
+        showGradient ? 'm-[3px]' : '',
         contentClassName
       )}>
         {children}

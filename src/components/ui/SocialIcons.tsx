@@ -3,14 +3,18 @@
 import { motion } from 'framer-motion';
 import IconButton from '@/components/ui/IconButton';
 import ShinyBorderButton from '@/components/ui/ShinyBorderButton';
-import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaFacebook, FaYoutube, FaTiktok } from 'react-icons/fa';
+import { FaThreads } from 'react-icons/fa6';
+
 
 export default function SocialIcons() {
   const socialPlatforms = [
-    { name: 'twitter', icon: <FaTwitter />, label: 'Twitter', url: 'https://twitter.com/rtndigital' },
-    { name: 'linkedin', icon: <FaLinkedin />, label: 'LinkedIn', url: 'https://linkedin.com/company/rtndigital' },
-    { name: 'github', icon: <FaGithub />, label: 'GitHub', url: 'https://github.com/rtndigital' },
-    { name: 'instagram', icon: <FaInstagram />, label: 'Instagram', url: 'https://instagram.com/rtndigital' },
+    { name: 'TikTok', icon: <FaTiktok />, label: 'TikTok', url: 'https://www.tiktok.com/@rtnglobalofficial' },
+    { name: 'facebook', icon: <FaFacebook />, label: 'Facebook', url: 'https://web.facebook.com/people/RTN-Global/61573828870610/' },
+    { name: 'linkedin', icon: <FaLinkedin />, label: 'LinkedIn', url: 'https://www.linkedin.com/in/rtnglobalofficial' },
+    { name: 'threads', icon: <FaThreads />, label: 'Threads', url: 'https://www.threads.net/@rtnglobalofficial' },
+    { name: 'youtube', icon: <FaYoutube />, label: 'YouTube', url: 'https://www.youtube.com/@RTNGlobal' },
+    { name: 'instagram', icon: <FaInstagram />, label: 'Instagram', url: 'https://www.instagram.com/rtnglobalofficial' },
   ];
   
   const openSocialLink = (url: string) => {

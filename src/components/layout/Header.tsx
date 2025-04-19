@@ -24,9 +24,9 @@ const menuItems = [
     href: '/portfolio',
     hasSubmenu: true,
     submenu: [
-      { name: 'Web Projects', href: '/portfolio/web' },
-      { name: 'Design Work', href: '/portfolio/design' },
-      { name: 'UX Case Studies', href: '/portfolio/ux-case-studies' },
+      { name: 'E-Commerce', href: '/portfolio/modern-e-commerce-platform' },
+      { name: 'Finance Dashboard', href: '/portfolio/finance-dashboard-app' },
+      { name: 'Health Tracking Mobile App', href: '/portfolio/health-tracking-mobile-app' },
     ]
   },
   { name: 'About', href: '/about', hasSubmenu: false },

@@ -300,6 +300,8 @@ export default function TeamsSection({
             src={member.image} 
             alt={member.name}
             className="w-full h-full object-cover transition-all duration-500"
+            width={300}
+            height={500}
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
             <h3 className="text-lg font-bold text-white">{member.name}</h3>

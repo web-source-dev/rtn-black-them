@@ -55,9 +55,9 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">RTN Digital Agency</h3>
+        <div className="flex flex-col md:flex-row gap-10">
+          <motion.div variants={itemVariants} className='md:basis-[30%]'>
+            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">RTN GLOBAL</h3>
             <p className="text-foreground/70 mb-6">
               Web development, design, and digital services to help your business grow in the digital landscape.
             </p>
@@ -78,7 +78,7 @@ export default function Footer() {
             </motion.div>
           </motion.div>
           
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="md:basis-[21%]">
             <h4 className="text-lg font-semibold mb-4 relative">
               <span className="bg-gradient-to-r from-primary/80 to-blue-400/80 bg-clip-text text-transparent">Services</span>
               <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-gradient-to-r from-primary to-blue-400"></span>
@@ -101,7 +101,7 @@ export default function Footer() {
             </ul>
           </motion.div>
           
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="md:basis-[21%]">
             <h4 className="text-lg font-semibold mb-4 relative">
               <span className="bg-gradient-to-r from-primary/80 to-blue-400/80 bg-clip-text text-transparent">Company</span>
               <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-gradient-to-r from-primary to-blue-400"></span>
@@ -124,7 +124,7 @@ export default function Footer() {
             </ul>
           </motion.div>
           
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="md:basis-[28%]">
             <h4 className="text-lg font-semibold mb-4 relative">
               <span className="bg-gradient-to-r from-primary/80 to-blue-400/80 bg-clip-text text-transparent">Connect</span>
               <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-gradient-to-r from-primary to-blue-400"></span>
@@ -141,7 +141,7 @@ export default function Footer() {
           className="text-center text-foreground/60 text-sm"
           variants={itemVariants}
         >
-          <p>© {new Date().getFullYear()} RTN Digital Agency. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} RTN GLOBAL. All rights reserved.</p>
           <p className="mt-2 text-xs text-foreground/40">
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             {' • '}

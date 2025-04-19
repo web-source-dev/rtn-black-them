@@ -54,6 +54,8 @@ const ImageWithCustomCursor = ({ src, alt }: { src: string, alt: string }) => {
         src={src} 
         alt={alt} 
         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        height={500}
+                        width={500}
       />
       {isHovering && (
         <motion.div 
@@ -192,7 +194,7 @@ export default function OurStorySection({
                       <div className="transform transition-transform duration-500 hover:scale-[1.02] hover:rotate-1">
                         <ImageWithCustomCursor 
                           src={event.image} 
-                          alt={`${event.title} - ${event.year}`} 
+                          alt={`${event.title} - ${event.year}`}
                         />
                       </div>
                     ) : (

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from './utils';
 
@@ -31,7 +31,7 @@ export default function Tooltip({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const calculatePosition = () => {
+  const calculatePosition = useCallback(() => {
     if (!triggerRef.current || !tooltipRef.current) return;
 
     const triggerRect = triggerRef.current.getBoundingClientRect();
@@ -72,7 +72,7 @@ export default function Tooltip({
     if (y + tooltipRect.height > viewportHeight - 10) y = viewportHeight - tooltipRect.height - 10;
 
     setCoords({ x, y });
-  };
+  }, [position]);
 
   const handleMouseEnter = () => {
     timeoutRef.current = setTimeout(() => {
@@ -98,7 +98,7 @@ export default function Tooltip({
       window.removeEventListener('scroll', calculatePosition);
       window.removeEventListener('resize', calculatePosition);
     };
-  }, [isVisible]);
+  }, [isVisible, calculatePosition]);
 
   const getArrowClassName = () => {
     switch (position) {
