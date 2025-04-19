@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #f1f1f1;
+  --primary: #8a5cf5;
+  --primary-foreground: #ffffff;
+  --secondary: #3b82f6;
+  --secondary-foreground: #ffffff;
+  --accent: #ec4899;
+  --accent-foreground: #ffffff;
+  --border: #222222;
+  --ring: #8a5cf5;
+  --muted: #222222;
+  --muted-foreground: #a1a1aa;
+  --card: #0a0a0a;
+  --card-foreground: #f1f1f1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --card: var(--card);
+  --card-foreground: var(--card-foreground);
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #050505;
+    --foreground: #f1f1f1;
+    --primary: #8a5cf5;
+    --primary-foreground: #ffffff;
+    --secondary: #3b82f6;
+    --secondary-foreground: #ffffff;
+    --accent: #ec4899;
+    --accent-foreground: #ffffff;
+    --border: #222222;
+    --ring: #8a5cf5;
+    --muted: #222222;
+    --muted-foreground: #a1a1aa;
+    --card: #0a0a0a;
+    --card-foreground: #f1f1f1;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+/* Dark theme specific utilities */
+.dark-card {
+  background-color: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(42, 42, 42, 0.5);
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+}
+
+.dark-gradient {
+  background: linear-gradient(to bottom right, rgba(138, 92, 245, 0.1), rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0));
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(138, 92, 245, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #f1f1f1, #8a5cf5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes blob {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(138, 92, 245, 0.5), 0 0 10px rgba(138, 92, 245, 0.3); }
+  100% { box-shadow: 0 0 10px rgba(138, 92, 245, 0.8), 0 0 20px rgba(138, 92, 245, 0.5); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+/* Simple animated starfield background */
+.bg-stars {
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: moveStars 60s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
