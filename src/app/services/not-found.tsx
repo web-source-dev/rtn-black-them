@@ -21,7 +21,7 @@ export default function NotFound() {
           </div>
           <h1 className="text-3xl md:text-4xl font-bold mb-6 text-white">Service Not Found</h1>
           <p className="text-foreground/70 text-xl max-w-xl mx-auto mb-10">
-            We couldn't find the service you're looking for. It may have been moved or deleted.
+            We couldn&apos;t find the service you&apos;re looking for. It may have been moved or deleted.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
