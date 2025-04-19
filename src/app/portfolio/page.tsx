@@ -1,4 +1,4 @@
-import React from 'react';
+import { Metadata } from 'next';
 import PortfolioHero from '@/components/Sections/PortfolioSections/PortfolioHero';
 import PortfolioGrid from '@/components/Sections/PortfolioSections/PortfolioGrid';
 import PortfolioProcess from '@/components/Sections/PortfolioSections/PortfolioProcess';
@@ -7,7 +7,6 @@ import TransitionWrapper from '@/components/animations/TransitionWrapper';
 import GridPattern from '@/components/ui/GridPattern';
 import TestimonialsSection from '@/components/Sections/reusableSections/TestimonialsSection';
 import { BreadcrumbJsonLd } from '@/components/utils/JsonLd';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Our Portfolio | RTN Global',
@@ -49,7 +48,7 @@ const portfolioBreadcrumbs = [
   { name: 'Portfolio', url: 'https://rtnglobal.co/portfolio' },
 ];
 
-export default function PortfolioPage() {
+export default async function Page() {
   return (
     <>
       <BreadcrumbJsonLd items={portfolioBreadcrumbs} />
