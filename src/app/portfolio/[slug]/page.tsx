@@ -3,124 +3,101 @@ import { Metadata } from 'next';
 import ProjectDetailContent from '@/components/Sections/PortfolioSections/ProjectDetailSections/ProjectDetailContent';
 import RelatedProjects from '@/components/Sections/PortfolioSections/ProjectDetailSections/RelatedProjects';
 import CTASection from '@/components/Sections/reusableSections/CTASection';
-import GridPattern from '@/components/ui/GridPattern';
 import TransitionWrapper from '@/components/animations/TransitionWrapper';
-import { portfolioProjects } from '@/components/Sections/PortfolioSections/portfolioData';
-import { ProjectJsonLd, BreadcrumbJsonLd } from '@/components/utils/JsonLd';
+import GridPattern from '@/components/ui/GridPattern';
+import { getProjectBySlug, getRelatedProjects, portfolioProjects } from '@/components/Sections/PortfolioSections/portfolioData';
+import { BreadcrumbJsonLd, ProjectJsonLd } from '@/components/utils/JsonLd';
+import { notFound } from 'next/navigation';
 
-// Generate static paths for all portfolio projects
+// Generate static paths for all projects
 export async function generateStaticParams() {
   return portfolioProjects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-// Define params type for this page
-type PageParams = {
-  slug: string;
-}
-
-// Generate metadata for each portfolio project page
-export async function generateMetadata(
-  props: { params: PageParams; searchParams: Record<string, string | string[]> }
-): Promise<Metadata> {
-  const { params } = props;
-  const project = portfolioProjects.find((project) => project.slug === params.slug);
+// Generate metadata for each project page
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = getProjectBySlug(params.slug);
   
   if (!project) {
     return {
-      title: 'Project Not Found',
+      title: 'Project Not Found | RTN Global',
       description: 'The requested project could not be found.',
     };
   }
 
-  const title = `${project.title} | RTN Global Portfolio`;
-  const description = project.shortDescription.length > 160 
-    ? `${project.shortDescription.substring(0, 157)}...` 
-    : project.shortDescription;
-
+  // Create enhanced description with more details
+  const enhancedDescription = 
+    `${project.shortDescription} ${
+      project.client ? `Project for ${project.client}, completed ${project.completionDate}.` : ''
+    } Technologies used: ${project.technologies.join(', ')}.`;
+  
   return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      url: `https://rtnglobal.co/portfolio/${project.slug}`,
-      type: 'article',
-      images: [
-        {
-          url: project.heroImage || '/images/portfolio/default-project.jpg',
-          width: 1200,
-          height: 630,
-          alt: `${project.title} - RTN Global Portfolio`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [project.heroImage || '/images/portfolio/default-project.jpg'],
-    },
+    title: `${project.title} | RTN Global Portfolio`,
+    description: enhancedDescription,
+    keywords: [
+      project.title,
+      project.category,
+      'RTN Global',
+      'web development',
+      'design',
+      'case study',
+      'project',
+      ...project.technologies
+    ],
     alternates: {
       canonical: `https://rtnglobal.co/portfolio/${project.slug}`,
     },
-    keywords: [
-      'portfolio',
-      'case study',
-      project.title.toLowerCase(),
-      project.category.toLowerCase(),
-      ...project.technologies?.map(tech => tech.toLowerCase()) || [],
-      'RTN Global',
-    ],
+    openGraph: {
+      title: `${project.title} | RTN Global Portfolio`,
+      description: enhancedDescription,
+      url: `https://rtnglobal.co/portfolio/${project.slug}`,
+      siteName: 'RTN Global',
+      images: [
+        {
+          url: project.heroImage || project.thumbnail,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        }
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} | RTN Global Portfolio`,
+      description: project.shortDescription,
+      images: [project.heroImage || project.thumbnail],
+    },
   };
 }
 
-export default function ProjectDetailPage(
-  props: { params: PageParams; searchParams: Record<string, string | string[]> }
-) {
-  const { params } = props;
-  const slug = params.slug;
+// Main component - using a standard approach
+function ProjectDetail({ params }: { params: { slug: string } }) {
+  const project = getProjectBySlug(params.slug);
   
-  // Find the current project data
-  const currentProject = portfolioProjects.find(project => project.slug === slug);
-  
-  // Get related projects (same category, excluding current)
-  const relatedProjects = currentProject
-    ? portfolioProjects
-        .filter(project => project.category === currentProject.category && project.slug !== slug)
-        .slice(0, 3)
-    : [];
-  
-  // If no related projects of the same category, get any 3 different projects
-  const otherProjects = relatedProjects.length === 0 && currentProject
-    ? portfolioProjects
-        .filter(project => project.slug !== slug)
-        .slice(0, 3)
-    : [];
-  
-  const projectsToShow = relatedProjects.length > 0 ? relatedProjects : otherProjects;
-  
-  if (!currentProject) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-2xl text-foreground/80">Project not found</p>
-      </div>
-    );
+  // If project not found, return 404
+  if (!project) {
+    notFound();
   }
-
-  // Breadcrumb items for schema
-  const breadcrumbItems = [
+  
+  // Get related projects (excluding current project)
+  const relatedProjects = getRelatedProjects(project.id);
+  
+  // Create breadcrumb path
+  const breadcrumbs = [
     { name: 'Home', url: 'https://rtnglobal.co' },
     { name: 'Portfolio', url: 'https://rtnglobal.co/portfolio' },
-    { name: currentProject.title, url: `https://rtnglobal.co/portfolio/${slug}` },
+    { name: project.title, url: `https://rtnglobal.co/portfolio/${project.slug}` },
   ];
-
+  
   return (
     <>
       {/* JSON-LD structured data */}
-      <ProjectJsonLd project={currentProject} />
-      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <ProjectJsonLd project={project} />
+      <BreadcrumbJsonLd items={breadcrumbs} />
       
       <TransitionWrapper>
         <main className="min-h-screen bg-background relative">
@@ -133,13 +110,19 @@ export default function ProjectDetailPage(
             className="fixed inset-0 z-0 pointer-events-none"
           />
           
-          {/* Main content */}
+          {/* Project content */}
           <div className="relative z-10">
-            <ProjectDetailContent project={currentProject} />
-            {projectsToShow.length > 0 && <RelatedProjects projects={projectsToShow} />}
+            <ProjectDetailContent project={project} />
+            
+            {/* Related Projects section */}
+            {relatedProjects.length > 0 && (
+              <RelatedProjects projects={relatedProjects} />
+            )}
+            
+            {/* CTA Section */}
             <CTASection 
-              title="Ready to start your own project?"
-              subtitle="Let's collaborate to create something extraordinary that drives results."
+              title="Ready to build your next project?"
+              subtitle="Let's discuss how we can help you achieve your business goals with our expertise."
               primaryButtonText="Start a Project"
               secondaryButtonText="Contact Us"
               primaryButtonLink="/contact"
@@ -151,4 +134,7 @@ export default function ProjectDetailPage(
       </TransitionWrapper>
     </>
   );
-} 
+}
+
+// Export as default
+export default ProjectDetail;
