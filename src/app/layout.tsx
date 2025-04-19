@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     telephone: true,
   },
   keywords: [
-    'web development', 
-    'web design', 
-    'Wix development', 
-    'bug fixes', 
-    'performance optimization', 
+    'web development',
+    'web design',
+    'Wix development',
+    'bug fixes',
+    'performance optimization',
     'UI/UX design',
     'digital agency',
     'RTN Global'
@@ -102,9 +102,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+
+        <meta name="theme-color" content="#8a5cf5" />
+
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebVitals />
@@ -114,9 +120,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header />
-        
+
         <Breadcrumbs />
-        
+
         <main className="flex-grow">
           {children}
         </main>
