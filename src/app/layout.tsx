@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/utils/JsonLd";
 import WebVitals from "@/components/utils/WebVitals";
 import GoogleAnalytics from "@/components/utils/GoogleAnalytics";
+import GoogleTagManager from "@/components/utils/GoogleTagManager";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -115,6 +116,7 @@ export default function RootLayout({
         <LocalBusinessJsonLd />
         <WebVitals />
         <GoogleAnalytics />
+        <GoogleTagManager />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}

@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
-import { onCLS, onFID, onLCP, onFCP, onTTFB } from 'web-vitals';
+import { onCLS, onFID, onLCP, onFCP, onTTFB, Metric } from 'web-vitals';
 
 // Define a function to send metrics to your analytics service
-const reportWebVitals = (metric: any) => {
+const reportWebVitals = (metric: Metric) => {
   // Replace this with your actual analytics reporting code
   console.log(metric);
   
