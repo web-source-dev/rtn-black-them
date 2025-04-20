@@ -137,6 +137,7 @@ function ServiceCard({ service }: { service: Service }) {
               }
               variant="ghost"
               className="group-hover:text-primary transition-colors"
+              aria-label={`Learn more about ${service.title}`}
             />
           </div>
         </div>

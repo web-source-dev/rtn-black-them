@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, memo } from 'react';
+import React, { useMemo, memo, useState, useEffect } from 'react';
 import Carousel from '@/components/ui/Carousel';
 import Badge from '@/components/ui/Badge';
 import Divider from '@/components/ui/Divider';
@@ -144,6 +144,27 @@ const TestimonialsSection = memo(function TestimonialsSection({
   className = "",
   carouselVariant = 'default'
 }: TestimonialsSectionProps) {
+  const [defaultSlidesToShow, setDefaultSlidesToShow] = useState(2);
+  const [gridSlidesToShow, setGridSlidesToShow] = useState(3);
+  
+  // Update slidesToShow based on window width
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setDefaultSlidesToShow(width < 768 ? 1 : 2);
+      setGridSlidesToShow(width < 768 ? 1 : (width < 1024 ? 2 : 3));
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Optimized carousel settings for better performance
   const carouselSettings = useMemo(() => {
     switch(carouselVariant) {
@@ -159,7 +180,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
         };
       case 'grid':
         return {
-          slidesToShow: 3,
+          slidesToShow: gridSlidesToShow,
           gap: 24,
           arrowsStyle: 'outside' as ArrowsStyle,
           showDots: true,
@@ -168,7 +189,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
         };
       default:
         return {
-          slidesToShow: 2,
+          slidesToShow: defaultSlidesToShow,
           gap: 30,
           arrowsStyle: 'default' as ArrowsStyle,
           showDots: true,
@@ -178,7 +199,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
           slideClassName: 'max-w-[90vw]' // Ensure slides don't overflow on mobile
         };
     }
-  }, [carouselVariant]);
+  }, [carouselVariant, defaultSlidesToShow, gridSlidesToShow]);
 
   // Pre-render testimonial cards for better performance
   const carouselItems = useMemo(() => {

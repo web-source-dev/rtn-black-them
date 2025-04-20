@@ -133,16 +133,18 @@ const Carousel = memo(function Carousel({
 
       {/* Simple dot indicators (only if needed) */}
       {showDots && items.length > slidesToShow && (
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1">
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex space-x-0 mt-10">
           {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
             <button
               key={`dot-${idx}`}
               onClick={() => setCurrentIndex(idx)}
-              className={`w-2 h-2 rounded-full ${
-                currentIndex === idx ? 'bg-white' : 'bg-white/50'
-              }`}
+              className={`w-10 h-10 flex items-center justify-center p-2`}
               aria-label={`Go to slide ${idx + 1}`}
-            />
+            >
+              <span className={`block w-2 h-2 rounded-full ${
+                currentIndex === idx ? 'bg-white' : 'bg-white/50'
+              }`} />
+            </button>
           ))}
         </div>
       )}

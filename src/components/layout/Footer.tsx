@@ -131,15 +131,16 @@ export default function Footer() {
               allow="autoplay; fullscreen"
               loading="lazy"
               className="absolute inset-0 scale-125"
+              title="3D Pufferfish Animation"
             ></iframe>
           </div>
           
           {/* Social and newsletter on right */}
           <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col">
             <div className="mb-6">
-              <h4 className="text-xl font-semibold mb-3 bg-gradient-to-r from-primary/90 to-blue-400/90 bg-clip-text text-transparent">
+              <h3 className="text-xl font-semibold mb-3 bg-gradient-to-r from-primary/90 to-blue-400/90 bg-clip-text text-transparent">
                 Stay Connected
-              </h4>
+              </h3>
               <p className="text-foreground/70 mb-4 text-sm">
                 Follow us for updates and insights
               </p>
