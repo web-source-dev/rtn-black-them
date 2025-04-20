@@ -109,7 +109,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-
+        <meta name="msvalidate.01" content="F66AEC2AF2F1CBA957BC9D6C29772D43" />
         <meta name="theme-color" content="#8a5cf5" />
 
         <OrganizationJsonLd />
