@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, memo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from './utils';
 
@@ -18,7 +18,7 @@ interface AccordionItemProps {
   onClick?: () => void;
 }
 
-function AccordionItem({
+const AccordionItem = memo(function AccordionItem({
   title,
   children,
   defaultOpen = false,
@@ -33,12 +33,12 @@ function AccordionItem({
 }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  const toggleAccordion = () => {
+  const toggleAccordion = useCallback(() => {
     if (!disabled) {
       setIsOpen(!isOpen);
       if (onClick) onClick();
     }
-  };
+  }, [disabled, isOpen, onClick]);
 
   // Default chevron icon if none provided
   const defaultIcon = (
@@ -56,52 +56,52 @@ function AccordionItem({
     </svg>
   );
 
-  // Different animation variants based on the animation type
+  // Simplified animation variants for better performance
   const variants = {
     height: {
       open: { 
         height: 'auto',
         opacity: 1,
-        transition: { duration: 0.3, ease: 'easeOut' }
+        transition: { duration: 0.2, ease: 'easeOut' }
       },
       closed: { 
         height: 0,
         opacity: 0,
-        transition: { duration: 0.2, ease: 'easeIn' }
+        transition: { duration: 0.15, ease: 'easeIn' }
       },
     },
     fade: {
       open: { 
         opacity: 1,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.2 }
       },
       closed: { 
         opacity: 0,
-        transition: { duration: 0.2 }
+        transition: { duration: 0.15 }
       },
     },
     slide: {
       open: { 
         x: 0,
         opacity: 1,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.2 }
       },
       closed: { 
-        x: -20,
+        x: -10, // Reduced from -20 to -10 for more subtle animation
         opacity: 0,
-        transition: { duration: 0.2 }
+        transition: { duration: 0.15 }
       },
     },
     scale: {
       open: { 
         scale: 1,
         opacity: 1,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.2 }
       },
       closed: { 
-        scale: 0.95,
+        scale: 0.98, // Less extreme scale effect (0.95 -> 0.98)
         opacity: 0,
-        transition: { duration: 0.2 }
+        transition: { duration: 0.15 }
       },
     },
   };
@@ -148,24 +148,27 @@ function AccordionItem({
         )}
       </button>
       
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            className="overflow-hidden"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={variants[animationType]}
-          >
-            <div className={cn('pb-4', contentClassName)}>
-              {children}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Fixed height placeholder to prevent layout shift */}
+      <div className="relative">
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              className="overflow-hidden"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={variants[animationType]}
+            >
+              <div className={cn('pb-4', contentClassName)}>
+                {children}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
-}
+});
 
 interface AccordionProps {
   items: {
@@ -183,7 +186,7 @@ interface AccordionProps {
   iconPosition?: 'left' | 'right';
 }
 
-export default function Accordion({
+const Accordion = memo(function Accordion({
   items,
   className = '',
   type = 'single',
@@ -196,7 +199,7 @@ export default function Accordion({
     items.filter((item) => item.defaultOpen).map((_, index) => index)
   );
 
-  const toggleItem = (index: number) => {
+  const toggleItem = useCallback((index: number) => {
     if (type === 'single') {
       setOpenItems(openItems.includes(index) && collapsible ? [] : [index]);
     } else {
@@ -206,7 +209,7 @@ export default function Accordion({
           : [...openItems, index]
       );
     }
-  };
+  }, [type, collapsible, openItems]);
 
   const variantClasses = {
     default: '',
@@ -235,6 +238,7 @@ export default function Accordion({
       ))}
     </div>
   );
-}
+});
 
+export default Accordion;
 export { AccordionItem }; 

@@ -91,6 +91,11 @@ export function OrganizationJsonLd() {
       addressRegion: 'NM',
       postalCode: '87110',
       addressCountry: 'US'
+    },
+    foundingDate: '2020',
+    founder: {
+      '@type': 'Person',
+      name: 'Muhammad Tayyab'
     }
   };
 
@@ -107,6 +112,7 @@ export function LocalBusinessJsonLd() {
     '@id': 'https://rtnglobal.co',
     url: 'https://rtnglobal.co',
     telephone: '+1 505 528 6780',
+    email: 'info@rtnglobal.site',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '1209 MOUNTAIN ROAD PLNE, STE R',
@@ -134,6 +140,8 @@ export function LocalBusinessJsonLd() {
         closes: '17:00'
       }
     ],
+    priceRange: '$$',
+    paymentAccepted: 'Credit Card, PayPal',
     sameAs: [
       'https://www.instagram.com/rtnglobalofficial/',
       'https://www.threads.net/@rtnglobalofficial/',
@@ -145,6 +153,31 @@ export function LocalBusinessJsonLd() {
   };
 
   return <JsonLd data={localBusinessData} />;
+}
+
+// Website schema
+export function WebsiteJsonLd() {
+  const websiteData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'RTN Global',
+    url: 'https://rtnglobal.co',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://rtnglobal.co/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'RTN Global',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://rtnglobal.co/images/logo.png'
+      }
+    }
+  };
+
+  return <JsonLd data={websiteData} />;
 }
 
 // Service schema
@@ -160,7 +193,12 @@ export function ServiceJsonLd({ service }: { service: ServiceProps }) {
       url: 'https://rtnglobal.co'
     },
     areaServed: 'Global',
-    serviceType: service.title
+    serviceType: service.title,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: `https://rtnglobal.co/services/${service.id}`
+    }
   };
 
   return <JsonLd data={serviceData} />;
@@ -180,7 +218,8 @@ export function ProjectJsonLd({ project }: { project: ProjectProps }) {
       url: 'https://rtnglobal.co'
     },
     datePublished: project.completionDate,
-    keywords: project.technologies.join(', ')
+    keywords: project.technologies.join(', '),
+    url: `https://rtnglobal.co/case-studies/${project.slug}`
   };
 
   return <JsonLd data={projectData} />;
@@ -218,4 +257,51 @@ export function FAQPageJsonLd({ faqs }: { faqs: FAQItem[] }) {
   };
 
   return <JsonLd data={faqPageData} />;
+}
+
+// Article schema for blog posts
+export function ArticleJsonLd({ 
+  title, 
+  description, 
+  publishDate, 
+  modifiedDate, 
+  authorName, 
+  imageUrl, 
+  url 
+}: { 
+  title: string; 
+  description: string; 
+  publishDate: string; 
+  modifiedDate?: string; 
+  authorName: string; 
+  imageUrl: string; 
+  url: string; 
+}) {
+  const articleData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    image: imageUrl,
+    datePublished: publishDate,
+    dateModified: modifiedDate || publishDate,
+    author: {
+      '@type': 'Person',
+      name: authorName
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'RTN Global',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://rtnglobal.co/images/logo.png'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url
+    }
+  };
+
+  return <JsonLd data={articleData} />;
 } 

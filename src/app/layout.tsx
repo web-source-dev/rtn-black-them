@@ -124,11 +124,9 @@ export default function RootLayout({
         <Header />
 
         <Breadcrumbs />
-
         <main className="flex-grow">
           {children}
         </main>
-
         <Footer />
       </body>
     </html>

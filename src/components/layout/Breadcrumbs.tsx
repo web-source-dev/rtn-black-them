@@ -53,23 +53,26 @@ export default function Breadcrumbs() {
   });
 
   return (
-    <div className="border-b border-gray-800">
-      <nav aria-label="Breadcrumb" className="container mx-auto px-4 py-3 text-sm text-gray-400">
-        <ol className="flex items-center flex-wrap">
-          <li className="flex items-center">
-            <Link href="/" className="flex items-center hover:text-primary transition-colors">
-              <FaHome className="h-4 w-4 mr-1" />
-              <span>Home</span>
+    <div className="border-b border-gray-200/10 bg-background mt-4 md:mt-6">
+      <nav 
+        aria-label="Breadcrumb" 
+        className="container mx-auto py-6 md:py-8 flex justify-center items-center"
+      >
+        <ol className="flex items-center flex-wrap justify-center max-w-screen-lg px-4">
+          <li className="flex items-center my-1.5">
+            <Link href="/" className="flex items-center hover:text-primary transition-colors text-gray-400 font-medium">
+              <FaHome className="h-5 w-5 mr-2" />
+              <span className="text-base md:text-lg">Home</span>
             </Link>
           </li>
           
           {breadcrumbItems.map((item) => (
-            <li key={item.href} className="flex items-center">
-              <BiChevronRight className="h-4 w-4 mx-2" />
+            <li key={item.href} className="flex items-center my-1.5">
+              <BiChevronRight className="h-6 w-6 mx-3 text-gray-500" />
               {item.isLast ? (
-                <span className="font-medium text-foreground">{item.label}</span>
+                <span className="font-semibold text-foreground text-base md:text-lg">{item.label}</span>
               ) : (
-                <Link href={item.href} className="hover:text-primary transition-colors">
+                <Link href={item.href} className="hover:text-primary transition-colors text-gray-400 font-medium text-base md:text-lg">
                   {item.label}
                 </Link>
               )}

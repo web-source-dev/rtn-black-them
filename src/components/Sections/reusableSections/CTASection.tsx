@@ -64,13 +64,13 @@ export default function CTASection({
         <div className="container mx-auto px-4">
           <RevealOnScroll className={contentClasses}>
             <div className="max-w-4xl mx-auto space-y-6">
-              <h1 className="text-4xl md:text-10xl lg:text-7xl font-bold leading-tight">Ready to
+              <h2 className="text-4xl md:text-10xl lg:text-7xl font-bold leading-tight">Ready to
               <span className="relative">
                 <span className="text-white mx-3"><GlitchText text="Transform" /></span>
                 <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-primary via-primary/80 to-secondary"></span>
                 </span>
                 your digital presence?
-              </h1>
+              </h2>
               
               <p className="text-foreground/80 text-xl mx-auto max-w-3xl">
                 {subtitle}

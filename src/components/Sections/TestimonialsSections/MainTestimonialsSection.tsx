@@ -156,9 +156,9 @@ export default function MainTestimonialsSection() {
           <RevealOnScroll>
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Client Success Stories</Badge>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-white to-foreground/90 bg-clip-text text-transparent">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-white to-foreground/90 bg-clip-text text-transparent">
                 Our Clients <span className="text-white"><GlitchText text="Testimonials" /></span>
-              </h1>
+              </h2>
               <p className="text-foreground/80 text-xl max-w-3xl mx-auto">
                 Don&apos;t just take our word for it - see what our clients have to say about their experiences working with our team.
               </p>

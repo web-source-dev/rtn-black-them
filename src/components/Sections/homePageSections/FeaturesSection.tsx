@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { memo } from 'react';
 import Badge from '@/components/ui/Badge';
 import RevealOnScroll from '@/components/animations/RevealOnScroll';
 import Divider from '@/components/ui/Divider';
 import Accordion from '@/components/ui/Accordion';
-import AmbientLightEffect from '@/components/animations/AmbientLightEffect';
 import GlitchText from '@/components/ui/GlitchText';
+
 interface Feature {
   id: string;
   title: string;
@@ -14,7 +14,7 @@ interface Feature {
   icon: React.ReactNode;
 }
 
-export default function FeaturesSection() {
+const FeaturesSection = memo(function FeaturesSection() {
   const features: Feature[] = [
     {
       id: 'responsive',
@@ -103,12 +103,10 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="py-28 relative overflow-hidden bg-gradient-to-b from-background/95 via-background to-background/95">
-      {/* Background elements */}
+    <section className="py-28 relative overflow-hidden bg-background">
+      {/* Simplified background elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute -bottom-[15%] -right-[10%] w-[40%] h-[60%] bg-primary/5 rounded-full blur-[150px] rotate-45 opacity-70" />
-        <div className="absolute top-[10%] -left-[5%] w-[30%] h-[30%] bg-secondary/5 rounded-full blur-[100px] opacity-0" />
-        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.02] mix-blend-soft-light"></div>
+        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.01] mix-blend-soft-light"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -127,38 +125,36 @@ export default function FeaturesSection() {
           </div>
         </RevealOnScroll>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
           <div className="lg:col-span-6">
-            <RevealOnScroll>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {features.slice(0, 4).map((feature, index) => (
-                  <FeatureCard key={`feature-${feature.id}`} feature={feature} index={index} />
-                ))}
-              </div>
-            </RevealOnScroll>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {features.slice(0, 4).map((feature, index) => (
+                <FeatureCard key={`feature-${feature.id}`} feature={feature} index={index} />
+              ))}
+            </div>
           </div>
           
           <div className="lg:col-span-6 relative">
-            <RevealOnScroll delay={0.2}>
-              <div className="relative dark-card rounded-2xl p-8 shadow-2xl">
-                <AmbientLightEffect className="absolute inset-0" color="rgba(138, 92, 245, 0.15)">
-                  <div className="w-full h-full"></div>
-                </AmbientLightEffect>
-                <div className="relative z-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {features.slice(4, 6).map((feature, index) => (
-                      <FeatureCard 
-                        key={`feature-${feature.id}`} 
-                        feature={feature} 
-                        index={index + 4} 
-                        variant="dark"
-                      />
-                    ))}
-                  </div>
-                  
-                  <Divider className="my-8 opacity-30" />
-                  
-                  <h3 className="text-2xl font-bold mb-6 text-gradient">Frequently Asked Questions</h3>
+            {/* FAQ card with fixed minimum height to prevent layout shift */}
+            <div className="relative dark-card rounded-2xl p-8 shadow-lg min-h-[600px]">
+              <div className="relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {features.slice(4, 6).map((feature, index) => (
+                    <FeatureCard 
+                      key={`feature-${feature.id}`} 
+                      feature={feature} 
+                      index={index + 4} 
+                      variant="dark"
+                    />
+                  ))}
+                </div>
+                
+                <Divider className="my-8 opacity-30" />
+                
+                <h3 className="text-2xl font-bold mb-6 text-gradient">Frequently Asked Questions</h3>
+                
+                {/* FAQ accordion - animationType="height" will prevent layout shifts */}
+                <div className="min-h-[240px]">
                   <Accordion 
                     items={faqItems.map((item) => ({
                       id: item.id,
@@ -166,16 +162,17 @@ export default function FeaturesSection() {
                       content: item.answer
                     }))}
                     className="bg-transparent"
+                    animationType="height"
                   />
                 </div>
               </div>
-            </RevealOnScroll>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+});
 
 interface FeatureCardProps {
   feature: Feature;
@@ -183,10 +180,10 @@ interface FeatureCardProps {
   variant?: 'light' | 'dark';
 }
 
-function FeatureCard({ feature, index, variant = 'light' }: FeatureCardProps) {
+const FeatureCard = memo(function FeatureCard({ feature, index, variant = 'light' }: FeatureCardProps) {
   return (
-    <RevealOnScroll delay={index * 0.1}>
-      <div className={`p-6 rounded-xl h-full transition-all duration-300 hover:shadow-glow ${variant === 'dark' ? 'bg-background/30 border border-border/10' : 'dark-card'}`}>
+    <RevealOnScroll delay={index * 0.05}>
+      <div className={`p-6 rounded-xl h-full transition-all duration-200 ${variant === 'dark' ? 'bg-background/30 border border-border/10' : 'dark-card'}`}>
         <div className={`mb-4 w-12 h-12 rounded-lg flex items-center justify-center ${variant === 'dark' ? 'bg-primary/20 text-primary' : 'bg-foreground/5 text-primary'}`}>
           {feature.icon}
         </div>
@@ -195,4 +192,6 @@ function FeatureCard({ feature, index, variant = 'light' }: FeatureCardProps) {
       </div>
     </RevealOnScroll>
   );
-} 
+});
+
+export default FeaturesSection; 

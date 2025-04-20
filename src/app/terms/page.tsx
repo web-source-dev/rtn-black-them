@@ -152,11 +152,12 @@ export default function TermsPage() {
           <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
             {/* Header */}
             <div className="text-center mb-16">
-              <GlitchText 
-                text="Terms of Service" 
-                className="text-4xl md:text-5xl font-bold mb-6"
-                glitchColor1="text-primary"
-              />
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white via-white to-foreground/90 bg-clip-text text-transparent">
+            <span className="relative">
+            <span className="text-white ml-5"><GlitchText text="Terms of Service" /></span>
+            <span className="absolute -bottom-1 left-5 w-full h-[3px] bg-gradient-to-r from-primary via-primary/80 to-secondary"></span>
+            </span>
+             </h1>
               <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
                 Please read these terms carefully before using our services. These terms establish the rules and regulations for the use of RTN Global&apos;s website and services.
               </p>

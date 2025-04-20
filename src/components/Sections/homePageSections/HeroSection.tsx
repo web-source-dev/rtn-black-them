@@ -34,7 +34,7 @@ export default function HeroSection({
       <div className="absolute bottom-[20%] right-[20%] w-[20%] h-[20%] rounded-full opacity-30 bg-gradient-to-br from-primary to-secondary blur-[80px]"></div>
       
       {/* Background faded large text */}
-      <h1 className="absolute z-0 inset-0 flex opacity-20 justify-center items-center text-[18vw] md:text-[14vw] font-extrabold text-white/5 tracking-tight pointer-events-none select-none">
+      <h1 className="absolute z-0 inset-0 flex opacity-20 hidden md:flex justify-center items-center text-[18vw] md:text-[14vw] font-extrabold text-white/5 tracking-tight pointer-events-none select-none">
         <span className="relative text-white/5">
           <GlitchText text="RTN GLOBAL" className='text-white/5' />
         </span>
@@ -46,22 +46,24 @@ export default function HeroSection({
             {badgeText}
           </Badge>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight bg-gradient-to-r from-white via-primary/90 to-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight bg-gradient-to-r from-white via-primary/90 to-secondary bg-clip-text text-transparent">
             {title}
-          </h1>
+          </h2>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 text-foreground/80 max-w-2xl mx-auto">
             {subtitle}
           </p>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 flex-col md:flex-row">
             <Link href={secondaryButtonLink}>
-              <MagneticButton variant='default' className="rounded-full ml-4 py-3 cursor-pointer px-8 text-base md:text-lg bg-primary border-background">
+              <MagneticButton variant='default' className="
+              rounded-full ml-0 md:ml-4 py-3 cursor-pointer px-8 text-base md:text-lg bg-primary border-background w-full md:w-auto
+              ">
                 {secondaryButtonText}
               </MagneticButton>
             </Link>
             <Link href={primaryButtonLink}>
-              <GlowButton variant='outline' className="rounded-full cursor-pointer py-3 px-8 text-base md:text-lg">
+              <GlowButton variant='outline' className="rounded-full cursor-pointer py-3 px-8 text-base md:text-lg w-full md:w-auto">
                 {primaryButtonText}
               </GlowButton>
             </Link>

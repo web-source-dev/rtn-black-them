@@ -26,12 +26,12 @@ export default function RtnGlobalScroll() {
         ref={targetRef}
         className="h-screen sticky top-0 flex items-center justify-center z-10"
       >
-        <motion.h1
+        <motion.h2
           style={{ scale, rotate, opacity, filter: blur }}
           className="text-white font-extrabold text-6xl md:text-8xl tracking-tight"
         >
           RTN GLOBAL
-        </motion.h1>
+        </motion.h2>
       </section>
     </div>
   )
