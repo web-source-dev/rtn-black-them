@@ -90,7 +90,6 @@ export default function Home() {
             <ServicesSection />
             
             <PortfolioPreviewSection />
-            <BigSectionText />
             
             <FeaturesSection />
             

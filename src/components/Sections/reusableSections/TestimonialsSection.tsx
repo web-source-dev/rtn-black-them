@@ -168,25 +168,6 @@ const TestimonialsSection = memo(function TestimonialsSection({
   // Optimized carousel settings for better performance
   const carouselSettings = useMemo(() => {
     switch(carouselVariant) {
-      case 'compact':
-        return {
-          slidesToShow: 1,
-          arrowsStyle: 'floating' as ArrowsStyle,
-          progressBar: false, // Disabled progress bar animation
-          showDots: false,
-          fadeMode: false, // Disabled fade mode for better performance
-          gap: 20,
-          autoPlay: false // Disabled autoplay for better performance
-        };
-      case 'grid':
-        return {
-          slidesToShow: gridSlidesToShow,
-          gap: 24,
-          arrowsStyle: 'outside' as ArrowsStyle,
-          showDots: true,
-          progressBar: false,
-          autoPlay: false
-        };
       default:
         return {
           slidesToShow: defaultSlidesToShow,
@@ -219,7 +200,6 @@ const TestimonialsSection = memo(function TestimonialsSection({
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-white to-foreground/90 bg-clip-text text-transparent">What Our
             <span className="relative">
             <span className="text-white mx-3"><GlitchText text="Clients" /></span>
-            <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-primary via-primary/80 to-secondary"></span>
             </span>
             Say
              </h2>
@@ -232,7 +212,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
         <div className="mt-6" id="testimonials-container">
           <Carousel
             items={carouselItems}
-            interval={8000}
+            interval={4000}
             loop={true}
             className="pb-10"
             {...carouselSettings}
@@ -256,7 +236,6 @@ const TestimonialCard = memo(function TestimonialCard({ testimonial }: { testimo
     <div className="dark-card rounded-xl p-6 md:p-8 h-full flex flex-col border border-foreground/5">
       <div className="flex mb-3">
         {stars}
-        <span className="sr-only">{testimonial.rating} out of 5 stars</span>
       </div>
       
       {testimonial.category && (
