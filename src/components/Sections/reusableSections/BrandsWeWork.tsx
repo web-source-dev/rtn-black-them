@@ -111,7 +111,7 @@ const BrandsWeWork = () => {
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">Brands We Work With</h2>
           <p className="text-sm md:text-base text-foreground/80 max-w-2xl mx-auto">
-            We're proud to collaborate with these amazing brands to create exceptional digital experiences.
+            We&apos;re proud to collaborate with these amazing brands to create exceptional digital experiences.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-4 bg-white p-3 md:p-4 rounded-lg shadow-sm">

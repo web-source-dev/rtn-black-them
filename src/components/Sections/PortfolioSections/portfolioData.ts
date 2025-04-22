@@ -229,7 +229,6 @@ export const portfolioProjects: PortfolioProject[] = [
     images: [
       '/images/ai-1.png',
       '/images/ai-2.png',
-      '/images/ai-3.png',
     ],
     technologies: [
       'Python',
@@ -270,14 +269,14 @@ export const portfolioProjects: PortfolioProject[] = [
     category: 'Web Application',
     client: 'PropertyConnect',
     completionDate: 'April 2023',
-    thumbnail: '/images/realestate-1.png',
-    heroImage: '/images/realestate-1.png',
+    thumbnail: '/images/estate-2.png',
+    heroImage: '/images/estate-2.png',
     shortDescription: 'A comprehensive real estate marketplace connecting buyers, sellers, and agents with advanced property search and virtual tours.',
     overview: 'PropertyConnect needed a modern platform to disrupt the traditional real estate market by providing a seamless digital experience for property transactions. We built a feature-rich marketplace with advanced search capabilities, virtual tours, and secure transaction processing.',
     images: [
-      '/images/realestate-1.png',
-      '/images/realestate-2.png',
-      '/images/realestate-3.png',
+      '/images/estate-1.png',
+      '/images/estate-5.png',
+      '/images/estate-4.png',
     ],
     technologies: [
       'Next.js',
