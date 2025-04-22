@@ -285,6 +285,11 @@ export const getActiveJobPostings = (): JobPosting[] => {
   return jobPostings.filter(job => job.isActive);
 };
 
+// Helper function to get all job postings (for the main careers page)
+export const getAllJobPostings = async (): Promise<JobPosting[]> => {
+  return jobPostings;
+};
+
 // Helper function to get job postings by department
 export const getJobPostingsByDepartment = (department: string): JobPosting[] => {
   return jobPostings.filter(job => job.department === department && job.isActive);
