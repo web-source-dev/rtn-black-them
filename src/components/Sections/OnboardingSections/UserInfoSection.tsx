@@ -628,7 +628,7 @@ export default function UserInfoSection() {
                       <svg className="h-5 w-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      Application submitted successfully! We'll be in touch soon.
+                      Application submitted successfully! We&apos;ll be in touch soon.
                     </p>
                   </div>
                 )}
@@ -639,7 +639,7 @@ export default function UserInfoSection() {
           <RevealOnScroll delay={0.3}>
             <div className="mt-10 text-center text-foreground/70 text-sm">
               <p>Your information is kept confidential and is only used for the application process.</p>
-              <p className="mt-2">If you have any questions, please contact us at <a href="mailto:coding@example.com" className="text-primary hover:underline">coding@example.com</a>.</p>
+              <p className="mt-2">If you have any questions, please contact us at <a href="mailto:coding@example.com" className="text-primary hover:underline">info@rtnglobal.co</a>.</p>
             </div>
           </RevealOnScroll>
         </div>

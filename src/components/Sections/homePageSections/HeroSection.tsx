@@ -66,7 +66,7 @@ export default function HeroSection({
         this.size = Math.random() * 3 + 1
         this.speedX = (Math.random() - 0.5) * 0.5
         this.speedY = (Math.random() - 0.5) * 0.5
-        this.color = `rgb(0, 0, 0)`
+        this.color = `rgba(255, 255, 255, 0.21)`
       }
       
       update() {
@@ -125,7 +125,7 @@ export default function HeroSection({
           
           if (distance < 100) {
             if (!ctx) return
-            ctx.strokeStyle = `rgb(0, 0, 0)`
+            ctx.strokeStyle = `rgba(255, 255, 255, 0.42)`
             ctx.lineWidth = 0.5
             ctx.beginPath()
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y)
