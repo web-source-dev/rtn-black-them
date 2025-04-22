@@ -7,7 +7,6 @@ import TestimonialsSection from '@/components/Sections/reusableSections/Testimon
 import CTASection from '@/components/Sections/reusableSections/CTASection';
 import ContactSection from '@/components/Sections/reusableSections/ContactSection';
 import GridPattern from '@/components/ui/GridPattern';
-import BigSectionText from '@/components/Sections/reusableSections/bigSectionText';
 import TransitionWrapper from '@/components/animations/TransitionWrapper';
 import { FAQPageJsonLd } from '@/components/utils/JsonLd';
 import { Metadata } from 'next';

@@ -145,14 +145,12 @@ const TestimonialsSection = memo(function TestimonialsSection({
   carouselVariant = 'default'
 }: TestimonialsSectionProps) {
   const [defaultSlidesToShow, setDefaultSlidesToShow] = useState(2);
-  const [gridSlidesToShow, setGridSlidesToShow] = useState(3);
-  
+
   // Update slidesToShow based on window width
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setDefaultSlidesToShow(width < 768 ? 1 : 2);
-      setGridSlidesToShow(width < 768 ? 1 : (width < 1024 ? 2 : 3));
     };
     
     // Set initial value
@@ -180,7 +178,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
           slideClassName: 'max-w-[90vw]' // Ensure slides don't overflow on mobile
         };
     }
-  }, [carouselVariant, defaultSlidesToShow, gridSlidesToShow]);
+  }, [carouselVariant, defaultSlidesToShow]);
 
   // Pre-render testimonial cards for better performance
   const carouselItems = useMemo(() => {
