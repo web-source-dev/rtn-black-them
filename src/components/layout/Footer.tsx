@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SocialIcons from '@/components/ui/SocialIcons';
 import Divider from '@/components/ui/Divider';
-
+import Image from 'next/image';
 const footerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -76,19 +76,15 @@ export default function Footer() {
           <div className="flex items-center mb-8 md:mb-0">
             <div className="mr-5 relative">
               <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-blue-400 rounded-full blur opacity-40"></div>
-              <div className="relative bg-background rounded-full p-2.5">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" className="fill-primary" />
-                  <path d="M2 17L12 22L22 17" className="stroke-primary" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M2 12L12 17L22 12" className="stroke-primary" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="relative bg-white rounded-full p-2.5">
+                <Image src="/logo192.png" alt="RTN Digital Services" width={60} height={50} />
               </div>
             </div>
             <div>
               <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 RTN GLOBAL
               </h2>
-              <p className="text-sm text-foreground/60">Web Development & Design</p>
+              <p className="text-sm text-foreground/60">Web Design & Development</p>
             </div>
           </div>
           
@@ -100,9 +96,9 @@ export default function Footer() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
             <Link
               href="/contact"
-              className="relative flex items-center gap-2 text-sm font-medium px-7 py-3.5 rounded-full border border-primary/30 bg-background text-primary hover:bg-primary/10 transition-colors"
+              className="relative flex items-center gap-2 text-sm font-medium px-7 py-3.5 rounded-full border border-primary/30 bg-background text-foreground hover:bg-primary/10 transition-colors"
             >
-              <span>Get a Free Consultation</span>
+              <span>Get a Free Quote</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"

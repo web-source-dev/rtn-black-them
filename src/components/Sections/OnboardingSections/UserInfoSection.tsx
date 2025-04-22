@@ -150,7 +150,7 @@ export default function UserInfoSection() {
     
     try {
       // Send data to the onboarding API endpoint
-      const response = await fetch('http://localhost:5000/api/onboarding', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/onboarding`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

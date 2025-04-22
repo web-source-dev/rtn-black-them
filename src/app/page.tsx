@@ -10,7 +10,7 @@ import GridPattern from '@/components/ui/GridPattern';
 import TransitionWrapper from '@/components/animations/TransitionWrapper';
 import { FAQPageJsonLd } from '@/components/utils/JsonLd';
 import { Metadata } from 'next';
-
+import BrandsWeWork from '@/components/Sections/reusableSections/BrandsWeWork';
 export const metadata: Metadata = {
   title: 'RTN Global | Web Development & Design Agency',
   description: 'RTN Global provides professional web development, web design, Wix development, bug fixes, performance optimization, and UI/UX design services to transform your digital presence.',
@@ -86,6 +86,7 @@ export default function Home() {
           {/* Main content */}
           <div className="relative z-10">
             <HeroSection />
+            <BrandsWeWork />
             <ServicesSection />
             
             <PortfolioPreviewSection />

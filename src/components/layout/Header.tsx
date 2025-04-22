@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiPlus, FiMinus, FiChevronRight } from 'react-icons/fi';
 import ShinyBorderButton from '@/components/ui/ShinyBorderButton';
+import Image from 'next/image';
+
 const menuItems = [
   { 
     name: 'Services', 
@@ -133,12 +135,7 @@ export default function Header() {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <Link href="/" className="group relative overflow-hidden px-4">
-              <div className="relative z-10">
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                  RTN Global
-                </span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <Image src="/RTN.png" alt="RTN Digital Services" width={120} height={100} />
             </Link>
           </motion.div>
           
@@ -153,7 +150,7 @@ export default function Header() {
                 onClick={() => window.location.href = '/contact'}
                 className="shadow-lg shadow-primary/10 border border-primary/20 text-sm py-2 cursor-pointer"
               >
-                Get a Quote
+                Get a Free Quote
               </ShinyBorderButton>
             </motion.div>
             
