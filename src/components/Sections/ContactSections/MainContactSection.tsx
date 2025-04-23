@@ -114,7 +114,7 @@ export default function MainContactSection() {
       <Divider className="opacity-50" />
       
       {/* Enhanced Contact Section with Feature Cards */}
-      <div id="contact-form" className="bg-gradient-to-b from-background via-background/98 to-background relative">
+      <div className="bg-gradient-to-b from-background via-background/98 to-background relative">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-[30%] right-[20%] w-[40%] h-[50%] bg-primary/5 rounded-full blur-[150px] opacity-70"></div>
           <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.02] mix-blend-soft-light"></div>
@@ -177,6 +177,7 @@ export default function MainContactSection() {
               </div>
             </RevealOnScroll>
           </div>
+          <div id="contact-form">
           
           <ContactSection 
             title="Send Us a Message"
@@ -186,7 +187,7 @@ export default function MainContactSection() {
             address="1209 MOUNTAIN ROAD PLNE, STE R, ALBUQUERQUE, NM 87110, US"
             className="pb-16"
           />
-          
+          </div>
           {/* Added quick contact options */}
           <RevealOnScroll delay={0.3}>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -392,25 +393,6 @@ export default function MainContactSection() {
                   </div>
                 </div>
               </ZoomOnHover>
-              
-              {/* Map embed in a card */}
-              <div className="col-span-1 lg:col-span-2">
-                <div className="dark-card rounded-2xl overflow-hidden border border-foreground/5 h-full">
-                  <div className="h-full min-h-[300px] w-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.3716069809288!2d-106.6472357!3d35.110127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220d082cf385a9%3A0x8918723b7a8c62a4!2s1209%20Mountain%20Rd%20NE%2C%20Albuquerque%2C%20NM%2087110!5e0!3m2!1sen!2sus!4v1689372155411!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: "0", minHeight: "300px" }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Office Location"
-                      className="w-full h-full min-h-[300px]"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
             </div>
           </RevealOnScroll>
           
