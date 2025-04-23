@@ -1,33 +1,38 @@
-import React from 'react';
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import Accordion from '../../ui/Accordion';
 import RevealOnScroll from '../../animations/RevealOnScroll';
 import TransitionWrapper from '../../animations/TransitionWrapper';
 import Divider from '../../ui/Divider';
-
-const faqItems = [
-  {
-    title: 'What services do you offer?',
-    content: 'We offer a comprehensive range of digital services including web design and development, mobile app development, UI/UX design, digital marketing, and more. Our team of experts is dedicated to delivering high-quality solutions tailored to your business needs.'
-  },
-  {
-    title: 'How long does a typical project take?',
-    content: 'Project timelines vary depending on the scope and complexity of the work. A simple website might take 2-4 weeks, while a complex web application could take 3-6 months. During our initial consultation, we\'ll provide you with a more accurate timeline based on your specific requirements.'
-  },
-  {
-    title: 'What is your pricing structure?',
-    content: 'Our pricing is project-based and depends on the scope, complexity, and timeline of your requirements. We provide detailed quotes after understanding your project needs. We also offer flexible payment options including milestone-based payments for larger projects.'
-  },
-  {
-    title: 'Do you provide ongoing support after project completion?',
-    content: 'Yes, we offer various support and maintenance packages to ensure your digital products continue to perform optimally. These include regular updates, security monitoring, performance optimization, and technical support.'
-  },
-  {
-    title: 'How do I get started with your services?',
-    content: 'Getting started is easy! Simply contact us through our website, email, or phone. We\'ll schedule an initial consultation to discuss your needs, provide recommendations, and outline the next steps for your project.'
-  }
-];
+import { faqData, FaqItem, FaqCategory } from './faqData';
 
 const FaqPage = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredFaqs, setFilteredFaqs] = useState<FaqItem[]>(faqData.flatMap(category => category.items));
+
+  // Filter FAQs based on search query and active category
+  useEffect(() => {
+    let filtered: FaqItem[] = [];
+    
+    if (activeCategory === 'all') {
+      filtered = faqData.flatMap((category: FaqCategory) => category.items);
+    } else {
+      const categoryData = faqData.find((cat: FaqCategory) => cat.id === activeCategory);
+      filtered = categoryData ? categoryData.items : [];
+    }
+
+    if (searchQuery) {
+      filtered = filtered.filter((faq: FaqItem) => 
+        faq.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        faq.content.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    setFilteredFaqs(filtered);
+  }, [searchQuery, activeCategory]);
+
   return (
     <TransitionWrapper>
       <section className="py-20 px-6 max-w-7xl mx-auto">
@@ -40,12 +45,78 @@ const FaqPage = () => {
           </div>
         </RevealOnScroll>
 
+        <RevealOnScroll>
+          <div className="max-w-4xl mx-auto mb-10">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search FAQs..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full p-4 pl-12 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-6 w-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+        </RevealOnScroll>
+
+        <RevealOnScroll>
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <button
+              onClick={() => setActiveCategory('all')}
+              className={`px-4 py-2 rounded-full transition-all ${
+                activeCategory === 'all' 
+                  ? 'bg-primary text-white' 
+                  : 'bg-background hover:bg-gray-700 border border-gray-700'
+              }`}
+            >
+              All FAQs
+            </button>
+            {faqData.map((category: FaqCategory) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-4 py-2 rounded-full transition-all ${
+                  activeCategory === category.id 
+                    ? 'bg-primary text-white' 
+                    : 'bg-background hover:bg-gray-700 border border-gray-700'
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </RevealOnScroll>
+
         <Divider className="my-10" />
 
         <div className="max-w-4xl mx-auto">
-          <RevealOnScroll>
-            <Accordion items={faqItems} />
-          </RevealOnScroll>
+          {filteredFaqs.length > 0 ? (
+            <RevealOnScroll>
+              <Accordion items={filteredFaqs} />
+            </RevealOnScroll>
+          ) : (
+            <div className="text-center py-10">
+              <p className="text-xl">No FAQs match your search criteria.</p>
+              <button 
+                className="mt-4 text-primary hover:underline"
+                onClick={() => {
+                  setSearchQuery('');
+                  setActiveCategory('all');
+                }}
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
           
           <RevealOnScroll>
             <div className="mt-16 text-center">
@@ -57,6 +128,22 @@ const FaqPage = () => {
             </div>
           </RevealOnScroll>
         </div>
+
+        {/* FAQ Schema for SEO */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": filteredFaqs.map((faq: FaqItem) => ({
+              "@type": "Question",
+              "name": faq.title,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.content
+              }
+            }))
+          })
+        }} />
       </section>
     </TransitionWrapper>
   );

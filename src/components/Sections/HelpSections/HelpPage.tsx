@@ -79,9 +79,6 @@ const HelpPage = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Browse our comprehensive documentation for detailed guides and tutorials.
                 </p>
-                <Link href="/documentation" variant="default">
-                  View Documentation
-                </Link>
               </div>
             </RevealOnScroll>
             
@@ -92,9 +89,6 @@ const HelpPage = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Watch step-by-step video tutorials to learn how to use our platform.
                 </p>
-                <Link href="/tutorials" variant="default">
-                  Watch Tutorials
-                </Link>
               </div>
             </RevealOnScroll>
             
@@ -105,9 +99,6 @@ const HelpPage = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Search our knowledge base for answers to common questions.
                 </p>
-                <Link href="/knowledge-base" variant="default">
-                  Browse Articles
-                </Link>
               </div>
             </RevealOnScroll>
           </div>

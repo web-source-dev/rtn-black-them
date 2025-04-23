@@ -17,13 +17,13 @@ const typeIcons: Record<ResourceType, React.ReactNode> = {
 
 // Type colors mapping
 const typeColors: Record<ResourceType, string> = {
-  'article': 'bg-blue-100 text-blue-700',
-  'whitepaper': 'bg-purple-100 text-purple-700',
-  'guide': 'bg-green-100 text-green-700',
-  'video': 'bg-red-100 text-red-700',
-  'webinar': 'bg-orange-100 text-orange-700',
-  'case-study': 'bg-indigo-100 text-indigo-700',
-  'ebook': 'bg-pink-100 text-pink-700',
+  'article': 'bg-blue-900/30 text-blue-300 border border-blue-500/20',
+  'whitepaper': 'bg-purple-900/30 text-purple-300 border border-purple-500/20',
+  'guide': 'bg-green-900/30 text-green-300 border border-green-500/20',
+  'video': 'bg-red-900/30 text-red-300 border border-red-500/20',
+  'webinar': 'bg-orange-900/30 text-orange-300 border border-orange-500/20',
+  'case-study': 'bg-indigo-900/30 text-indigo-300 border border-indigo-500/20',
+  'ebook': 'bg-pink-900/30 text-pink-300 border border-pink-500/20',
 };
 
 interface ResourceCardProps {
@@ -57,7 +57,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
   return (
     <div 
       className={cn(
-        'group flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm transition-all hover:shadow-md',
+        'group flex flex-col overflow-hidden rounded-lg border border-foreground/20 bg-foreground/5 backdrop-blur-sm shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/40 hover:bg-foreground/10',
         variant === 'featured' && 'md:flex-row',
         variant === 'compact' && 'h-full',
         className || ''
@@ -65,22 +65,22 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
     >
       <div 
         className={cn(
-          'relative overflow-hidden bg-neutral-100',
+          'relative overflow-hidden bg-background/20',
           variant === 'default' && 'h-48',
           variant === 'featured' && 'h-52 md:h-auto md:w-2/5',
           variant === 'compact' && 'h-32'
         )}
       >
-        <Link href={`/resources/${slug}`}>
+        <Link href={`/resources/${slug}`} className="block h-full w-full">
           <Image
-            src={thumbnailImage || '/images/placeholder.jpg'}
+            src={thumbnailImage || 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop'}
             alt={title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110"
           />
           <div 
             className={cn(
-              "absolute left-3 top-3 z-10 rounded-md px-2 py-1 text-xs font-medium shadow-sm",
+              "absolute left-3 top-3 z-10 rounded-md px-2 py-1 text-xs font-medium shadow-sm backdrop-blur-sm",
               typeColors[type]
             )}
           >
@@ -89,26 +89,32 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
               <span className="capitalize">{type}</span>
             </div>
           </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
         </Link>
       </div>
 
       <div className={cn(
-        'flex flex-1 flex-col p-4',
+        'flex flex-1 flex-col p-5',
         variant === 'featured' && 'md:w-3/5',
         variant === 'compact' && 'p-3'
       )}>
-        <div className="mb-2 flex items-center gap-2 text-sm text-neutral-600">
+        <div className="mb-2 flex items-center gap-2 text-sm text-foreground/60">
           <span>{formatDate(publishDate)}</span>
           {readTime && (
             <>
-              <span className="text-neutral-300">•</span>
-              <span>{readTime} min read</span>
+              <span className="text-foreground/30">•</span>
+              <span className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {readTime} min
+              </span>
             </>
           )}
         </div>
 
         <h3 className={cn(
-          'mb-2 font-semibold leading-tight tracking-tight text-neutral-900',
+          'mb-3 font-semibold leading-tight tracking-tight text-white group-hover:text-primary transition-colors duration-300',
           variant === 'featured' ? 'text-xl' : 'text-lg',
           variant === 'compact' && 'text-base line-clamp-2'
         )}>
@@ -119,7 +125,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
 
         {variant !== 'compact' && (
           <p className={cn(
-            'mb-4 text-sm text-neutral-600',
+            'mb-4 text-sm text-foreground/70',
             variant === 'default' && 'line-clamp-2',
             variant === 'featured' && 'line-clamp-3'
           )}>
@@ -129,7 +135,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
 
         <div className="mt-auto flex items-center">
           <div className="flex flex-1 items-center gap-3">
-            <div className="relative h-8 w-8 overflow-hidden rounded-full bg-neutral-200">
+            <div className="relative h-8 w-8 overflow-hidden rounded-full bg-background/50 border border-foreground/10">
               {author.avatar ? (
                 <Image 
                   src={author.avatar} 
@@ -138,15 +144,15 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                   className="object-cover" 
                 />
               ) : (
-                <span className="flex h-full w-full items-center justify-center text-xs font-medium text-neutral-500">
+                <span className="flex h-full w-full items-center justify-center text-xs font-medium text-foreground/70">
                   {author.name.charAt(0)}
                 </span>
               )}
             </div>
             <div className="flex flex-col">
-              <span className="text-sm font-medium text-neutral-900">{author.name}</span>
+              <span className="text-sm font-medium text-white">{author.name}</span>
               {variant !== 'compact' && (
-                <span className="text-xs text-neutral-500">{author.title}</span>
+                <span className="text-xs text-foreground/60">{author.title}</span>
               )}
             </div>
           </div>
@@ -154,9 +160,12 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
           {variant !== 'compact' && (
             <Link 
               href={`/resources/${slug}`}
-              className="text-sm font-medium text-blue-600 hover:text-blue-800"
+              className="text-sm font-medium text-primary hover:text-primary/80 flex items-center group-hover:translate-x-0.5 transition-transform duration-300"
             >
               Read more
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           )}
         </div>

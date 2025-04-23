@@ -369,7 +369,8 @@ export default function Header() {
                   delay: 0.2
                 }}
               >
-                <div className="relative w-full max-w-md h-[400px] rounded-2xl overflow-hidden border border-border/40 shadow-xl bg-gradient-to-br from-background to-primary/10">
+                <div className="relative w-full max-w-md h-[400px] rounded-2xl overflow-hidden border p-6 border-border/40 shadow-xl bg-gradient-to-br from-background to-primary/10">
+                    <video src="/assets/video1.mp4" className='mx-auto border rounded-2xl' autoPlay loop muted playsInline />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-6">
                     <motion.h3 
                       className="text-2xl font-bold text-white mb-2"
@@ -404,53 +405,6 @@ export default function Header() {
                         Explore Services
                       </motion.button>
                     </motion.div>
-                  </div>
-                  
-                  {/* 3D decorative elements */}
-                  <div className="absolute top-1/3 right-1/4 w-32 h-32 rounded-full bg-blue-500/30 blur-2xl"></div>
-                  <div className="absolute bottom-1/3 left-1/4 w-40 h-40 rounded-full bg-primary/20 blur-2xl"></div>
-                  
-                  {/* Abstract 3D shapes */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-48 h-48">
-                      <motion.div 
-                        className="absolute top-0 left-0 w-32 h-32 rounded-2xl border border-white/20 backdrop-blur-sm bg-white/5"
-                        animate={{ 
-                          rotate: [0, 10, 0], 
-                          y: [0, -10, 0],
-                        }}
-                        transition={{ 
-                          repeat: Infinity, 
-                          duration: 8,
-                          ease: "easeInOut" 
-                        }}
-                      />
-                      <motion.div 
-                        className="absolute bottom-0 right-0 w-32 h-32 rounded-full border border-primary/20 backdrop-blur-sm bg-primary/5"
-                        animate={{ 
-                          rotate: [0, -15, 0], 
-                          x: [0, 10, 0],
-                        }}
-                        transition={{ 
-                          repeat: Infinity, 
-                          duration: 10,
-                          ease: "easeInOut",
-                          delay: 1 
-                        }}
-                      />
-                      <motion.div 
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-3xl border border-blue-400/20 backdrop-blur-sm bg-blue-500/5 rotate-45"
-                        animate={{ 
-                          rotate: [45, 60, 45], 
-                          scale: [1, 1.05, 1],
-                        }}
-                        transition={{ 
-                          repeat: Infinity, 
-                          duration: 12,
-                          ease: "easeInOut" 
-                        }}
-                      />
-                    </div>
                   </div>
                 </div>
               </motion.div>
