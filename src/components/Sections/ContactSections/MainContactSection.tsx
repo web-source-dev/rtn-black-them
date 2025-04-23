@@ -51,13 +51,13 @@ export default function MainContactSection() {
                   
                   <ZoomOnHover>
                     <a 
-                      href="tel:+18001234567" 
+                      href="tel:+15055286780"
                       className="flex items-center justify-center px-5 py-2.5 rounded-full bg-foreground/5 text-foreground hover:bg-foreground/10 font-medium transition-all"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      Call Us: (800) 123-4567
+                      Call Us: +1 (505) 528-6780
                     </a>
                   </ZoomOnHover>
                 </div>
@@ -98,9 +98,9 @@ export default function MainContactSection() {
         <ContactSection 
           title="Get in Touch"
           subtitle="Ready to elevate your digital presence? We're here to help you transform your ideas into reality."
-          email="hello@rtndigital.com"
-          phone="+1 (800) 123-4567"
-          address="1234 Digital Avenue, Tech District, San Francisco, CA 94105"
+          email="info@rtnglobal.co"
+          phone="+1 (505) 528-6780"
+          address="1209 MOUNTAIN ROAD PLNE, STE R, ALBUQUERQUE, NM 87110, US"
           className="pb-16"
         />
       </div>
@@ -209,25 +209,24 @@ export default function MainContactSection() {
                   <div className="h-48 overflow-hidden">
                     <Image 
                       src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
-                      alt="San Francisco Office"
+                      alt="ALBUQUERQUE Office"
                       className="w-full h-full object-cover object-center"
                       width={500}
                       height={500}
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">San Francisco</h3>
+                    <h3 className="text-xl font-semibold mb-2">ALBUQUERQUE</h3>
                     <p className="text-foreground/80 mb-4">
-                      1234 Digital Avenue<br />
-                      Tech District<br />
-                      San Francisco, CA 94105
+                      1209 MOUNTAIN ROAD PLNE, STE R<br />
+                      ALBUQUERQUE, NM 87110
                     </p>
-                    <p className="text-primary">+1 (800) 123-4567</p>
+                    <p className="text-primary">+1 (505) 528-6780</p>
                   </div>
                 </div>
               </ZoomOnHover>
             </RevealOnScroll>
-            
+{/*             
             <RevealOnScroll delay={0.2}>
               <ZoomOnHover>
                 <div className="dark-card rounded-2xl overflow-hidden border border-foreground/5 h-full">
@@ -276,7 +275,7 @@ export default function MainContactSection() {
                   </div>
                 </div>
               </ZoomOnHover>
-            </RevealOnScroll>
+            </RevealOnScroll> */}
           </div>
         </div>
       </section>

@@ -59,10 +59,10 @@ const SupportPage = () => {
                 <BadgeIcon icon="📞" className="mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Phone Support</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Available Monday-Friday, 9AM-6PM EST.
+                  Available Monday-Saturday 9AM-6PM EST.
                 </p>
-                <Link href="tel:+15551234567" variant="default">
-                  +1 (555) 123-4567
+                <Link href="tel:+15055286780" variant="default">
+                  +1 (505) 528-6780
                 </Link>
               </div>
               

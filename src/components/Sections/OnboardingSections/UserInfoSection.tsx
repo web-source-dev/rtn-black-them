@@ -202,12 +202,12 @@ export default function UserInfoSection() {
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Free Coding Classes</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-white to-foreground/90 bg-clip-text text-transparent">
-                We&apos;d Love to 
+                Help Us 
                 <span className="relative text-white mx-2">
-                  <GlitchText text="Know" />
+                  <GlitchText text="Learn" />
                   <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-primary via-primary/80 to-secondary"></span>
                 </span> 
-                You Better
+                About You
               </h1>
               <p className="text-foreground/80 text-lg max-w-3xl mx-auto">
                 Apply for our <span className="text-primary font-medium">FREE Full Stack Web Development</span> classes! No prior coding experience required - just bring your enthusiasm and dedication.

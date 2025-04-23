@@ -117,8 +117,8 @@ const termsOfServiceSections = [
           RTN Global<br />
           1209 MOUNTAIN ROAD PLNE, STE R<br />
           ALBUQUERQUE, NM 87110<br />
-          Email: info@rtnglobal.site<br />
-          Phone: +1 505 528 6780
+          Email: info@rtnglobal.co<br />
+          Phone: +1 (505) 528-6780
         </p>
       </div>
     )
