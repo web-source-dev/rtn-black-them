@@ -111,7 +111,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msvalidate.01" content="F66AEC2AF2F1CBA957BC9D6C29772D43" />
         <meta name="theme-color" content="#8a5cf5" />
-
+        <meta name="p:domain_verify" content="6c9e1d4660a4bad3a1f0c1774e2ba384"/>
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebVitals />
