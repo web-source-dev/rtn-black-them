@@ -41,7 +41,7 @@ export async function generateMetadata({
       siteName: 'RTN Global',
       images: [
         {
-          url: resource.thumbnailImage?.src || '/images/og-resources.jpg',
+          url: resource.thumbnailImage || '/images/og-resources.jpg',
           width: 1200,
           height: 630,
           alt: `${resource.title} - RTN Global Resource`,
