@@ -13,22 +13,22 @@ import GlowButton from '@/components/ui/GlowButton';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | RTN Global',
-  description: 'RTN Global Terms of Service. Please read these terms carefully before using our services.',
+  description: 'RTN Global\'s comprehensive Terms of Service outlining our legal agreement for website and service usage. This document details important information about user rights, responsibilities, intellectual property, liability limitations, and the governing law that protects both our clients and our business. Please review thoroughly before engaging our web development and digital services.',
   openGraph: {
     title: 'Terms of Service | RTN Global',
-    description: 'RTN Global Terms of Service. Please read these terms carefully before using our services.',
+    description: 'RTN Global\'s comprehensive Terms of Service outlining our legal agreement for website and service usage. This document details important information about user rights, responsibilities, intellectual property, liability limitations, and the governing law that protects both our clients and our business. Please review thoroughly before engaging our web development and digital services.',
     url: 'https://rtnglobal.co/terms',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms of Service | RTN Global',
-    description: 'RTN Global Terms of Service. Please read these terms carefully before using our services.',
+    description: 'RTN Global\'s comprehensive Terms of Service outlining our legal agreement for website and service usage. This document details important information about user rights, responsibilities, intellectual property, liability limitations, and the governing law that protects both our clients and our business.',
   },
   alternates: {
     canonical: 'https://rtnglobal.co/terms',
   },
-  keywords: ['terms of service', 'terms and conditions', 'legal', 'RTN Global', 'services agreement'],
+  keywords: ['terms of service', 'terms and conditions', 'legal', 'RTN Global', 'services agreement', 'website terms', 'intellectual property rights', 'liability limitations', 'web development terms', 'digital services agreement'],
 };
 
 // Terms of Service sections
