@@ -103,7 +103,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -117,12 +116,14 @@ export default function RootLayout({
         <WebVitals />
         <GoogleAnalytics />
         <GoogleTagManager />
+        {/* TrustBox script */}
+        <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+        {/* End TrustBox script */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header />
-
         <Breadcrumbs />
         <main className="flex-grow">
           {children}

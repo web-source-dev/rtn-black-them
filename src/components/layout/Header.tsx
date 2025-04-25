@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiPlus, FiMinus, FiChevronRight } from 'react-icons/fi';
 import ShinyBorderButton from '@/components/ui/ShinyBorderButton';
 import Image from 'next/image';
+import SearchIcon from '@/components/ui/SearchIcon';
 
 const menuItems = [
   { 
@@ -140,6 +141,8 @@ export default function Header() {
           </motion.div>
           
           <div className="flex items-center gap-3">
+            <SearchIcon />
+            
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -219,6 +222,11 @@ export default function Header() {
                           <FiChevronRight />
                         </motion.span>
                       </Link>
+                    </motion.div>
+                    
+                    <motion.div variants={itemVariants} className="py-3 border-b border-border/10">
+                      <h3 className="text-sm text-foreground/60 mb-2 px-1">Search</h3>
+                      <SearchIcon isMobile={true} />
                     </motion.div>
                     
                     {menuItems.map((item) => (
