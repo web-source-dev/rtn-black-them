@@ -112,6 +112,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#8a5cf5" />
         <meta name="p:domain_verify" content="6c9e1d4660a4bad3a1f0c1774e2ba384"/>
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="FFa8Z3C/KRpbr+emCAUycA" async></script>
+        <meta name="ahrefs-site-verification" content="fc5564f188b5d48186cc06ead93d2a6d027520f02c48c284a5ea262445867278">
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebVitals />
