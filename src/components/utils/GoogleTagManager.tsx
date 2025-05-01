@@ -35,7 +35,7 @@ export default function GoogleTagManager() {
         }}
       />
 
-      {/* Google Tag Manager - NoScript (will be added via inline script) */}
+      {/* Google Tag Manager - NoScript (Inline install) */}
       <Script
         id="gtm-noscript-installer"
         strategy="afterInteractive"
@@ -55,6 +55,23 @@ export default function GoogleTagManager() {
           `,
         }}
       />
+
+      {/* Ahrefs Analytics Script */}
+      <Script
+        id="ahrefs-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              var ahrefs_analytics_script = document.createElement('script');
+              ahrefs_analytics_script.async = true;
+              ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+              ahrefs_analytics_script.setAttribute('data-key', 'FFa8Z3C/KRpbr+emCAUycA');
+              document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+            })();
+          `,
+        }}
+      />
     </>
   );
-} 
+}
