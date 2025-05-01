@@ -1,13 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { performSearch, getResultsGroupedByType, getTypeLabel, SearchResult, SearchResultType } from '@/utils/SearchUtils';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-export default function SearchPage() {
+// Create a client component that uses useSearchParams
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
@@ -35,7 +36,7 @@ export default function SearchPage() {
 
   // Get all result types that have at least one result
   const availableTypes = Object.entries(groupedResults)
-    .filter(([results]) => results.length > 0)
+    .filter(([, results]) => results.length > 0)
     .map(([type]) => type as SearchResultType);
 
   // Filter results based on active tab
@@ -249,5 +250,35 @@ export default function SearchPage() {
         </motion.div>
       )}
     </div>
+  );
+}
+
+// Main page component with Suspense
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto py-16 px-4 text-center">
+        <div className="animate-pulse">
+          <div className="h-8 w-48 bg-foreground/10 rounded mx-auto mb-4"></div>
+          <div className="h-4 w-64 bg-foreground/10 rounded mx-auto mb-8"></div>
+          <div className="h-12 max-w-2xl mx-auto bg-foreground/10 rounded mb-8"></div>
+          <div className="max-w-5xl mx-auto space-y-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="flex gap-4 p-4 border border-border/40 rounded-lg bg-background/50">
+                <div className="w-32 h-32 bg-foreground/10 rounded"></div>
+                <div className="flex-1">
+                  <div className="h-6 w-3/4 bg-foreground/10 rounded mb-2"></div>
+                  <div className="h-4 w-1/4 bg-foreground/10 rounded mb-2"></div>
+                  <div className="h-4 w-full bg-foreground/10 rounded mb-2"></div>
+                  <div className="h-4 w-full bg-foreground/10 rounded mb-2"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 } 
