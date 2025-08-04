@@ -46,6 +46,7 @@ const resources = [
 const company = [
   { name: 'About Us', href: '/about' },
   { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Careers', href: '/careers' },
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'Contact', href: '/contact' },

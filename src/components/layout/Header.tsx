@@ -32,6 +32,7 @@ const menuItems = [
       { name: 'Health Tracking Mobile App', href: '/portfolio/health-tracking-mobile-app' },
     ]
   },
+  { name: 'Pricing', href: '/pricing', hasSubmenu: false },
   { name: 'About', href: '/about', hasSubmenu: false },
   { name: 'Contact', href: '/contact', hasSubmenu: false },
 ];
