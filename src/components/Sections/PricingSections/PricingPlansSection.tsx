@@ -115,7 +115,7 @@ export default function PricingPlansSection() {
         <div className="container mx-auto px-4">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {pricingPlans.map((plan, index) => (
+              {pricingPlans.map((plan) => (
                 <div
                   key={plan.name}
                   className={`relative group ${
