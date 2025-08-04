@@ -33,7 +33,7 @@ const pricingPlans: PricingPlan[] = [
     credits: 5,
     openTasks: 1,
     websites: 1,
-    responseTime: '72 hours',
+    responseTime: '24 hours',
     reports: 'Bi-weekly performance reports',
     support: 'Email support',
     additionalCredits: 75,
@@ -41,7 +41,7 @@ const pricingPlans: PricingPlan[] = [
       '5 credits per month',
       '1 open task',
       'Supports 1 website',
-      '72 hours response time',
+      '24 hours response time',
       'Bi-weekly performance reports',
       'Email support'
     ],
@@ -58,7 +58,7 @@ const pricingPlans: PricingPlan[] = [
     credits: 8,
     openTasks: 2,
     websites: 1,
-    responseTime: '48 hours',
+    responseTime: '24 hours',
     reports: 'Bi-weekly performance reports',
     support: 'Email support',
     additionalCredits: 70,
@@ -66,9 +66,9 @@ const pricingPlans: PricingPlan[] = [
       '8 credits per month',
       '2 open tasks',
       'Supports 1 website',
-      '48 hours response time',
+      '24 hours response time',
       'Bi-weekly performance reports',
-      'Email support'
+      'Email + WhatsApp support'
     ],
     notIncluded: [
       'Asana collaboration',
@@ -83,7 +83,7 @@ const pricingPlans: PricingPlan[] = [
     credits: 12,
     openTasks: 3,
     websites: 2,
-    responseTime: '24 hour',
+    responseTime: '12 hours',
     reports: 'Weekly performance reports',
     support: 'Email support + Asana collaboration',
     additionalCredits: 60,
@@ -91,9 +91,9 @@ const pricingPlans: PricingPlan[] = [
       '12 credits per month',
       '3 open tasks',
       'Supports up to 2 websites',
-      '24 hour response time',
+      '12 hours response time',
       'Weekly performance reports',
-      'Email support + Asana collaboration'
+      'Email + WhatsApp support + Asana collaboration'
     ],
     notIncluded: [],
     popular: true
