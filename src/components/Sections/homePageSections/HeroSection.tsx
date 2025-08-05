@@ -9,6 +9,7 @@ import Image from 'next/image'
 import GlitchText from '@/components/ui/GlitchText'
 import MagneticButton from '@/components/ui/MagneticButton'
 import { motion } from 'framer-motion'
+import TrustPilotWidget from '@/components/utils/TrustPilotWidget'
 
 interface HeroProps {
   title?: string
@@ -249,7 +250,11 @@ export default function HeroSection({
           </div>
         </div>
       </div>
+        {/* Floating brand name */}
+        <div className="absolute bottom-10 left-10 z-100000 opacity-100 hidden md:block">
       
+        <TrustPilotWidget className="max-w-[350px]" />
+      </div>
       {/* Floating brand name */}
       <div className="absolute bottom-10 right-20 z-10 opacity-30 hidden md:block">
         <GlitchText text="RTN GLOBAL" className='text-6xl font-extrabold text-white/20' />
