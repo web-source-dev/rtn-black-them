@@ -81,7 +81,7 @@ export default function MainContactSection() {
                 <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-[50px]"></div>
                 <div className="relative z-10 bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl p-2 backdrop-blur-sm border border-foreground/10">
                   <Image 
-                    src="/contact-illustration.svg" 
+                    src="/contact-illustration.jpg" 
                     alt="Contact illustration" 
                     width={600} 
                     height={500} 
