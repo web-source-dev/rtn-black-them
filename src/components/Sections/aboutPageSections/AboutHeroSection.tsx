@@ -17,7 +17,7 @@ interface AboutHeroSectionProps {
 export default function AboutHeroSection({
   subtitle = "We Create Digital Experiences That Matter",
   description = "Founded in 2015, RTN Global has grown from a small startup to a leading digital agency. Our mission is to help businesses succeed in the digital age through innovative solutions and strategic thinking.",
-  imageUrl = "https://cdn.prod.website-files.com/65fcfd3a1f010ba8051f84bb/6621e5192bcc8a4d0fbc0f95_Service%20Two%20hero%20image%20(2)-p-1600.webp",
+  imageUrl = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
   className = "",
 }: AboutHeroSectionProps) {
   return (
@@ -114,31 +114,6 @@ export default function AboutHeroSection({
                 />
               </div>
               
-              {/* Floating badge */}
-              <motion.div 
-                className="absolute -bottom-6 -left-6 bg-background py-3 px-6 rounded-full shadow-lg border border-foreground/10 flex items-center gap-3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <div 
-                      key={`avatar-${i}`}
-                      className="w-8 h-8 rounded-full border-2 border-background overflow-hidden"
-                    >
-                      <Image 
-                        src={`https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${i * 10 + 15}.jpg`} 
-                        alt="Team member"
-                        className="w-full h-full object-cover" 
-                        height={500}
-                        width={500}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <span className="font-medium text-sm">Passionate Team</span>
-              </motion.div>
 
               {/* Tech stack floating element */}
               <motion.div 

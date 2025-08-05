@@ -9,6 +9,7 @@ import GlitchText from '@/components/ui/GlitchText';
 import ZoomOnHover from '@/components/animations/ZoomOnHover';
 import ShinyBorderButton from '@/components/ui/ShinyBorderButton';
 import Image from 'next/image';
+import BrandsWeWork from '../reusableSections/BrandsWeWork';
 
 
 export default function MainContactSection() {
@@ -49,18 +50,6 @@ export default function MainContactSection() {
                       </svg>
                     </a>
                   </ShinyBorderButton>
-                  
-                  <ZoomOnHover>
-                    <a 
-                      href="tel:+15055286780"
-                      className="flex items-center justify-center px-5 py-2.5 rounded-full bg-foreground/5 text-foreground hover:bg-foreground/10 font-medium transition-all"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      Call Us: +1 (505) 528-6780
-                    </a>
-                  </ZoomOnHover>
                 </div>
                 
                 <div className="mt-12 flex items-center space-x-6">
@@ -95,21 +84,11 @@ export default function MainContactSection() {
             </RevealOnScroll>
           </div>
           
-          {/* Trust indicators with improved styling */}
-          <RevealOnScroll delay={0.3}>
-            <div className="mt-16 lg:mt-24">
-              <div className="text-center text-foreground/60 text-sm mb-4">TRUSTED BY INDUSTRY LEADERS</div>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <Image src="/industry/employ_me.avif" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
-                <Image src="/industry/Nmga.png" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
-                <Image src="/industry/stabm.avif" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
-                <Image src="/industry/Harmony 4 All logo.avif" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
-                <Image src="/industry/tourprism.png" alt="Company logo" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" width={100} height={40} />
-              </div>
-            </div>
-          </RevealOnScroll>
+      
         </div>
       </section>
+      
+      <BrandsWeWork />
       
       <Divider className="opacity-50" />
       
@@ -190,7 +169,7 @@ export default function MainContactSection() {
           </div>
           {/* Added quick contact options */}
           <RevealOnScroll delay={0.3}>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
               <a href="mailto:info@rtnglobal.co" className="group flex items-center p-4 rounded-xl bg-foreground/5 hover:bg-foreground/10 transition-all border border-foreground/5 backdrop-blur-sm">
                 <div className="mr-4 rounded-full bg-primary/10 p-3 group-hover:bg-primary/20 transition-all">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -200,18 +179,6 @@ export default function MainContactSection() {
                 <div>
                   <h3 className="font-medium text-white">Email Us</h3>
                   <p className="text-primary">info@rtnglobal.co</p>
-                </div>
-              </a>
-              
-              <a href="tel:+15055286780" className="group flex items-center p-4 rounded-xl bg-foreground/5 hover:bg-foreground/10 transition-all border border-foreground/5 backdrop-blur-sm">
-                <div className="mr-4 rounded-full bg-primary/10 p-3 group-hover:bg-primary/20 transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-medium text-white">Call Us</h3>
-                  <p className="text-primary">+1 (505) 528-6780</p>
                 </div>
               </a>
               
@@ -366,33 +333,98 @@ export default function MainContactSection() {
           </RevealOnScroll>
           
           <RevealOnScroll delay={0.1}>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <ZoomOnHover>
-                <div className="dark-card rounded-2xl overflow-hidden border border-foreground/5 h-full col-span-1">
-                  <div className="h-48 overflow-hidden">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Image Side - Left */}
+                <div className="relative">
+                  <div className="absolute -top-6 -left-6 w-full h-full bg-primary/10 rounded-2xl blur-sm"></div>
+                  <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
                     <Image 
                       src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
                       alt="ALBUQUERQUE Office"
-                      className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
-                      width={500}
+                      className="w-full h-[400px] lg:h-[500px] object-cover object-center transition-transform duration-700 hover:scale-105"
+                      width={800}
                       height={500}
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">ALBUQUERQUE</h3>
-                    <p className="text-foreground/80 mb-4">
-                      1209 MOUNTAIN ROAD PLNE, STE R<br />
-                      ALBUQUERQUE, NM 87110
-                    </p>
-                    <div className="flex items-center text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      +1 (505) 528-6780
+                </div>
+
+                {/* Location Details - Right */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
+                      ALBUQUERQUE
+                    </h3>
+                  </div>
+
+                  <div className="space-y-6">
+                    {/* Address */}
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-1">Address</h4>
+                        <p className="text-foreground/80 leading-relaxed">
+                          1209 MOUNTAIN ROAD PLNE, STE R<br />
+                          ALBUQUERQUE, NM 87110<br />
+                          United States
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
+                        <a href="mailto:info@rtnglobal.co" className="text-primary hover:text-primary/80 transition-colors">
+                          info@rtnglobal.co
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Office Hours */}
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-1">Office Hours</h4>
+                        <p className="text-foreground/80">
+                          Monday - Friday: 9:00 AM - 6:00 PM (MST)<br />
+                          Saturday - Sunday: Closed
+                        </p>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                    <a 
+                      href="https://maps.google.com/?q=1209+MOUNTAIN+ROAD+PLNE,+STE+R,+ALBUQUERQUE,+NM+87110" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-white font-medium transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      View on Map
+                    </a>
+                  </div>
                 </div>
-              </ZoomOnHover>
+              </div>
             </div>
           </RevealOnScroll>
           

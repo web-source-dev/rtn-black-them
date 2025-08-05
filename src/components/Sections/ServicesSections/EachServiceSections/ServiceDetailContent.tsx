@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Badge from '@/components/ui/Badge';
 import Accordion from '@/components/ui/Accordion';
 import RevealOnScroll from '@/components/animations/RevealOnScroll';
@@ -86,6 +87,19 @@ export default function ServiceDetailContent({ service }: ServiceDetailContentPr
               <p className="text-foreground/80 text-xl md:text-2xl mb-10">
                 {service.shortDescription}
               </p>
+              
+              {service.heroImage && (
+                <div className="mt-12 max-w-4xl mx-auto">
+                  <Image
+                    src={service.heroImage}
+                    alt={service.title}
+                    width={1200}
+                    height={800}
+                    className="w-full h-64 md:h-120 object-cover rounded-2xl shadow-2xl"
+                    priority
+                  />
+                </div>
+              )}
             </div>
           </RevealOnScroll>
         </div>

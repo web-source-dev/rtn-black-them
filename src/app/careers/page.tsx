@@ -6,7 +6,7 @@ import TransitionWrapper from '@/components/animations/TransitionWrapper';
 import GridPattern from '@/components/ui/GridPattern';
 import CareerHero from '@/components/Sections/CareersSections/CareerHero';
 import CareersListing from '@/components/Sections/CareersSections/CareersListing';
-import CareerBenefits from '@/components/Sections/CareersSections/CareerBenefits';
+// import CareerBenefits from '@/components/Sections/CareersSections/CareerBenefits';
 export const metadata: Metadata = {
   title: 'Careers | RTN Global',
   description: 'Join our team and make a difference. Explore career opportunities at RTN Global.',
@@ -45,7 +45,7 @@ export default async function CareersPage() {
         <div className="relative z-10">
           <CareerHero />
           <CareersListing />
-          <CareerBenefits />
+          {/* <CareerBenefits /> */}
           <CTASection
             title="Ready to join our team?"
             subtitle="We're always looking for talented individuals to help us grow. If you don't see a position that matches your skills, send us your resume anyway."

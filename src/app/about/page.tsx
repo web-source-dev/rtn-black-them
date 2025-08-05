@@ -2,7 +2,7 @@ import React from 'react';
 import AboutHeroSection from '@/components/Sections/aboutPageSections/AboutHeroSection';
 import OurStorySection from '@/components/Sections/aboutPageSections/OurStorySection';
 import MissionValuesSection from '@/components/Sections/aboutPageSections/MissionValuesSection';
-import TeamsSection from '@/components/Sections/reusableSections/TeamsSection';
+// import TeamsSection from '@/components/Sections/reusableSections/TeamsSection';
 import CTASection from '@/components/Sections/reusableSections/CTASection';
 import TransitionWrapper from '@/components/animations/TransitionWrapper';
 import { BreadcrumbJsonLd } from '@/components/utils/JsonLd';
@@ -57,7 +57,7 @@ export default function AboutPage() {
           <AboutHeroSection />
           <OurStorySection />
           <MissionValuesSection />
-          <TeamsSection />
+          {/* <TeamsSection /> */}
           <CTASection 
             title="Ready to Work Together?"
             subtitle="Have a project in mind? Let's collaborate to create something exceptional."

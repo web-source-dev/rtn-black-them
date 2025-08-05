@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Badge from '@/components/ui/Badge';
 import RevealOnScroll from '@/components/animations/RevealOnScroll';
 import GlitchText from '@/components/ui/GlitchText';
@@ -29,7 +30,7 @@ export default function ServicesHero() {
               From web development to design and optimization, we have the expertise to elevate your online presence.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
               <a 
                 href="#services" 
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-glow transition-all"
@@ -42,6 +43,17 @@ export default function ServicesHero() {
               >
                 Get a Quote
               </a>
+            </div>
+            
+            <div className="relative max-w-4xl mx-auto">
+              <Image
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
+                alt="Digital Services"
+                width={1200}
+                height={600}
+                className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-2xl"
+                priority
+              />
             </div>
           </div>
         </RevealOnScroll>

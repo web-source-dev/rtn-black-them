@@ -95,31 +95,31 @@ export default function OurStorySection({
       year: "2015",
       title: "Foundation",
       description: "RTN Digital was founded with a vision to bridge the gap between technology and business needs. Starting with just 3 team members in a small office, we began our journey focusing on web development projects for local businesses.",
-      image: "https://cdn.prod.website-files.com/6620a2675e3acea2378415a0/66e50eb59ec2cf5375b08b36_Creto%20Home%20Banner%20Image-p-500.webp"
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
     },
     {
       year: "2017",
       title: "Expansion",
       description: "After delivering several successful projects, we expanded our team to 10 members and moved to a larger office. We broadened our service offerings to include UI/UX design and digital marketing.",
-      image: "https://cdn.prod.website-files.com/6620a2675e3acea2378415a0/66d7edf9816a45386deab6e2_About%20Two%20Banner-p-800.avif"
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop"
     },
     {
       year: "2019",
       title: "Recognition",
       description: "Our commitment to quality earned us industry recognition with awards for web design excellence and digital innovation. We secured partnerships with major technology providers and expanded our client base internationally.",
-      image: "https://cdn.prod.website-files.com/66c729ae93811082511b85b8/66d53db4435f3588b0f611cd_Portfolio%20Small%204-p-800.webp"
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
     },
     {
       year: "2021",
       title: "Innovation Hub",
       description: "We established our Innovation Hub, dedicated to exploring emerging technologies like AI, AR/VR, and blockchain. This initiative helps us stay at the cutting edge and bring innovative solutions to our clients.",
-      image: "https://cdn.prod.website-files.com/66c729ae93811082511b85b8/66d53da598f4b8d21f0eee29_Portfolio%20Small%203-p-800.webp"
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
     },
     {
       year: "2023",
       title: "Global Presence",
       description: "With a team of over 30 professionals and offices in multiple cities, we've established a global presence, serving clients across diverse industries and continuing to push the boundaries of digital excellence.",
-      image: "https://cdn.prod.website-files.com/66c729ae93811082511b85b8/66d53d7ce6a5e1e2b889f366_Portfolio%20Small%201-p-800.webp"
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
     }
   ],
   className = "",
@@ -221,7 +221,7 @@ export default function OurStorySection({
             <div className="flex justify-center gap-4 flex-wrap">
               <GlowButton 
                 onClick={() => window.location.href = '/portfolio'}
-                className="py-3 px-6 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground/90 font-medium transition-colors"
+                className="py-3 px-6 rounded-full text-black bg-foreground hover:bg-foreground/70 font-medium transition-colors"
               >
                 View Our Work
               </GlowButton>

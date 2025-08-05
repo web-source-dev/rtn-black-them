@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Badge from '@/components/ui/Badge';
 import RevealOnScroll from '@/components/animations/RevealOnScroll';
 import Divider from '@/components/ui/Divider';
@@ -92,6 +93,17 @@ export default function ProcessSection() {
             <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
               Our experienced team is ready to help you transform your digital presence with our comprehensive services.
             </p>
+            
+            <div className="mb-8 max-w-2xl mx-auto">
+              <Image
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop"
+                alt="Team Collaboration"
+                width={800}
+                height={400}
+                className="w-full h-48 object-cover rounded-xl shadow-lg"
+              />
+            </div>
+            
             <a 
               href="/contact" 
               className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-glow transition-all"

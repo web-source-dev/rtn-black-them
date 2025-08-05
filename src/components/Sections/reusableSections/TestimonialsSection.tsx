@@ -67,7 +67,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'TechStart Inc.',
       content: 'Working with RTN Digital Agency was a game-changer for our business. Their team not only delivered a stunning website but also provided strategic insights that helped us improve our online presence. The results speak for themselves - our conversions have increased by 40% since launch!',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/28.jpg',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face',
       category: 'Web Development'
     },
     {
@@ -77,7 +77,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'GrowthVentures',
       content: "I was impressed by RTN's attention to detail and their commitment to understanding our brand. They fixed persistent bugs that had been plaguing our site for months and implemented new features that our customers love. Their team is responsive, professional, and truly skilled.",
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/28.jpg',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
       category: 'Bug Fixes'
     },
     {
@@ -87,7 +87,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'Artisan Collective',
       content: "As a creative business owner, I needed a website that would showcase my work beautifully. RTN delivered beyond my expectations. Their UI/UX design expertise is exceptional, and they created a site that perfectly captures my brand's aesthetic while being incredibly user-friendly.",
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/2.jpg',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
       category: 'UI/UX Design'
     },
     {
@@ -97,7 +97,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'Urban Outfitters',
       content: 'We hired RTN to redesign our e-commerce platform, and the results have been phenomenal. Our site is now faster, more intuitive, and our bounce rate has decreased significantly. Their team was communicative throughout the entire process and delivered on time and within budget.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/2.jpg',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
       category: 'E-commerce'
     },
     {
@@ -107,7 +107,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'Bright Ideas Marketing',
       content: 'The website RTN built for us has dramatically increased our lead generation. They took the time to understand our business goals and created a solution that perfectly addresses our needs. Their attention to SEO details was particularly impressive.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/4.jpg',
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
       category: 'Web Development'
     },
     {
@@ -117,7 +117,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'Streamline Solutions',
       content: 'RTN helped us create a customer portal that has revolutionized how we interact with our clients. The interface is intuitive, and the functionality is exactly what we needed. Their project management was flawless from start to finish.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/4.jpg',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
       category: 'Web Applications'
     },
     {
@@ -127,7 +127,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'Coastal Creations',
       content: "As a small business, our budget was limited, but RTN worked with us to create a website that looks premium without the premium price tag. They were honest about what we needed and what we didn't, which I really appreciated.",
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/6.jpg',
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
       category: 'Web Development'
     },
     {
@@ -137,7 +137,7 @@ const TestimonialsSection = memo(function TestimonialsSection({
       company: 'Global Systems Inc.',
       content: 'The security and performance optimization RTN implemented on our site has made a tangible difference. Our page load times decreased by 67%, and their security audit prevented what could have been a serious data breach.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/6.jpg',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face',
       category: 'Performance Optimization'
     }
   ],

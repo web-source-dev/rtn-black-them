@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Badge from '@/components/ui/Badge';
 import RevealOnScroll from '@/components/animations/RevealOnScroll';
 import ZoomOnHover from '@/components/animations/ZoomOnHover';
@@ -94,6 +95,19 @@ export default function ServicesRelated({ services }: ServicesRelatedProps) {
                       </div>
                       <h3 className="text-xl font-bold ml-3 text-white">{service.title}</h3>
                     </div>
+                    
+                    {service.heroImage && (
+                      <div className="mb-4 relative overflow-hidden rounded-lg">
+                        <Image
+                          src={service.heroImage}
+                          alt={service.title}
+                          width={400}
+                          height={300}
+                          className="w-full h-32 object-cover transition-transform duration-300 hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     
                     <p className="text-foreground/70 mb-4 flex-grow">{service.shortDescription}</p>
                     

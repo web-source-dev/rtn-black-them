@@ -36,7 +36,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: 'Transform your vision into reality with our expert web development services. We create responsive, high-performance websites and applications using cutting-edge technologies that drive business growth and deliver exceptional user experiences.',
     fullDescription: 'Our web development services deliver custom, responsive websites and applications that are tailored to your specific business needs. We use modern frameworks and technologies to create fast, secure, and scalable digital solutions that work seamlessly across all devices. From simple landing pages to complex web applications, we handle projects of any size with meticulous attention to detail.',
     icon: 'code',
-    heroImage: '/images/services/web-development-hero.jpg',
+    heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
     benefits: [
       {
         title: 'Custom Solutions',
@@ -126,6 +126,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: 'Elevate your online presence with our specialized Wix development services. We design and build custom, feature-rich Wix websites that stand out from templates, combining ease of management with professional functionality tailored to your unique business requirements.',
     fullDescription: 'Our Wix development services help businesses create professional, feature-rich websites on the Wix platform. We leverage the full power of Wix to create custom designs, implement advanced functionality, and optimize performance. Whether you need a brand new Wix website or want to improve an existing one, our experts can help you maximize the potential of this popular platform.',
     icon: 'grid',
+    heroImage: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=600&fit=crop',
     benefits: [
       {
         title: 'Quick Deployment',
@@ -179,6 +180,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: 'Eliminate frustrating website issues with our comprehensive bug fixing services. Our expert team quickly identifies and resolves technical problems, performance bottlenecks, and compatibility issues to ensure your digital presence functions flawlessly across all platforms.',
     fullDescription: 'Our bug fixing services provide quick and reliable solutions for all types of website issues and errors. Whether you\'re experiencing functional problems, performance issues, or compatibility concerns, our team can identify and resolve the root causes efficiently. We follow a systematic approach to troubleshooting that ensures thorough resolution rather than temporary fixes.',
     icon: 'check-circle',
+    heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=600&fit=crop',
     benefits: [
       {
         title: 'Quick Resolution',
@@ -232,6 +234,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: 'Captivate your audience with stunning, strategic web design that perfectly balances aesthetics and functionality. Our designs are meticulously crafted to reflect your brand identity, engage visitors, drive conversions, and create memorable digital experiences that set you apart from competitors.',
     fullDescription: 'Our web design services focus on creating visually stunning, user-friendly websites that effectively communicate your brand message and engage your visitors. We combine aesthetic appeal with functional design to create websites that not only look great but also deliver results. Each design is unique and tailored to your brand identity, target audience, and business objectives.',
     icon: 'pen-tool',
+    heroImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop',
     benefits: [
       {
         title: 'Brand-Aligned Design',
@@ -285,6 +288,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: 'Revolutionize your digital experience with our human-centered UI/UX design services. We create intuitive, engaging interfaces and seamless user journeys that dramatically improve user satisfaction, increase conversion rates, and transform visitors into loyal customers through research-driven design excellence.',
     fullDescription: 'Our UI/UX design services focus on creating intuitive, enjoyable, and effective user experiences that help you achieve your business goals. We combine user research, interaction design, and visual design to create interfaces that users love to engage with. Whether for websites, applications, or digital products, our UI/UX solutions balance aesthetic appeal with functionality to drive user satisfaction and business results.',
     icon: 'layout',
+    heroImage: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=1200&h=600&fit=crop',
     benefits: [
       {
         title: 'Increased Conversion Rates',
@@ -338,6 +342,7 @@ export const servicesData: ServiceDetail[] = [
     shortDescription: 'Supercharge your website\'s speed and performance with our comprehensive optimization services. We identify and eliminate performance bottlenecks, implement best practices, and fine-tune your digital assets to deliver lightning-fast experiences that satisfy users and boost search engine rankings.',
     fullDescription: 'Our performance optimization services help improve your website\'s speed, responsiveness, and overall user experience. Slow-loading websites lose visitors and conversions. We identify performance bottlenecks and implement best practices to significantly improve loading times and interactivity. From code optimization to server configuration, we address all aspects that affect your website\'s performance.',
     icon: 'zap',
+    heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
     benefits: [
       {
         title: 'Improved User Experience',
