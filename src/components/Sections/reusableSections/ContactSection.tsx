@@ -20,7 +20,6 @@ export interface ContactSectionProps {
 export default function ContactSection({
   subtitle = "Ready to bring your digital vision to life? Let's talk about how we can help.",
   email = "info@rtnglobal.co",
-  phone = "+1 (505) 28-6780",
   address = "1209 MOUNTAIN ROAD PLNE, STE R, ALBUQUERQUE, NM 87110, US",
   className = "",
 }: ContactSectionProps) {

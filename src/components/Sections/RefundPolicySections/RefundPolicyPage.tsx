@@ -50,7 +50,7 @@ export default function RefundPolicyPage() {
                 <div className="bg-foreground/5 rounded-2xl p-8 border border-foreground/10 mb-12">
                   <h2 className="text-2xl font-bold mb-4 text-white">Overview</h2>
                   <p className="text-foreground/80 mb-0">
-                    At RTN Global, we strive to deliver exceptional digital services that meet and exceed our clients' expectations. 
+                    At RTN Global, we strive to deliver exceptional digital services that meet and exceed our clients expectations. 
                     This refund policy outlines the terms and conditions under which refunds may be requested and processed for our services.
                   </p>
                 </div>
@@ -83,7 +83,7 @@ export default function RefundPolicyPage() {
                       </p>
                       <ul className="list-disc list-inside text-foreground/70 space-y-1">
                         <li>Full refund if initial concepts are rejected within 7 days</li>
-                        <li>Partial refund (75%) if revisions haven't started</li>
+                        <li>Partial refund (75%) if revisions haven&apos;t started</li>
                         <li>No refund after final designs are delivered</li>
                       </ul>
                     </div>
