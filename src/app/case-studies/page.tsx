@@ -11,7 +11,7 @@ import { caseStudies } from '@/components/Sections/CaseStudiesSections/caseStudi
 export const metadata: Metadata = {
   title: 'Case Studies | RTN Global',
   description: 'Explore how we have helped businesses achieve their digital goals through strategic technology solutions and innovative approaches.',
-  keywords: [
+  keywords: [ 
     'case studies',
     'success stories',
     'digital transformation',
