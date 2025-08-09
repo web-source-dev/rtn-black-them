@@ -104,6 +104,8 @@ const pricingPlans: PricingPlan[] = [
 
 export default function PricingPlansSection() {
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
+  const [isNonProfit, setIsNonProfit] = useState<boolean>(false);
+  const NON_PROFIT_DISCOUNT = 0.2;
 
   return (
     <section className="py-28 relative overflow-hidden">
@@ -116,6 +118,28 @@ export default function PricingPlansSection() {
       <AmbientLightEffect color="rgba(138, 92, 245, 0.1)" size={600} blur={100}>
         <div className="container mx-auto px-4">
           <RevealOnScroll>
+            {/* Non-profit discount section */}
+            <div className="max-w-4xl mx-auto mb-10">
+              <div className="dark-card border border-primary/20 rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-foreground font-semibold text-base md:text-lg mb-1">Non-profit discount</h4>
+                  <p className="text-foreground/70 text-sm">Registered non-profits save 20% on all plans. Toggle to preview discounted pricing.</p>
+                </div>
+                <div className="flex items-center gap-3 w-full md:w-auto">
+                  {isNonProfit && (
+                    <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">20% applied</span>
+                  )}
+                  <GlowButton 
+                    onClick={() => setIsNonProfit(prev => !prev)}
+                    aria-pressed={isNonProfit}
+                    className="whitespace-nowrap"
+                  >
+                    {isNonProfit ? 'Remove Non-profit Discount' : 'Apply Non-profit Discount'}
+                  </GlowButton>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {pricingPlans.map((plan) => (
                 <div
@@ -163,10 +187,20 @@ export default function PricingPlansSection() {
                         
                         {/* Price */}
                         <div className="mb-6">
-                          <div className="flex items-baseline justify-center">
-                            <span className="text-4xl font-bold text-foreground">${plan.price}</span>
-                            <span className="text-foreground/60 ml-2">/{plan.period}</span>
+                          <div className="flex items-baseline justify-center gap-2">
+                            {isNonProfit ? (
+                              <>
+                                <span className="text-2xl line-through text-foreground/50">${plan.price}</span>
+                                <span className="text-4xl font-bold text-foreground">${Math.round(plan.price * (1 - NON_PROFIT_DISCOUNT))}</span>
+                              </>
+                            ) : (
+                              <span className="text-4xl font-bold text-foreground">${plan.price}</span>
+                            )}
+                            <span className="text-foreground/60">/{plan.period}</span>
                           </div>
+                          {isNonProfit && (
+                            <div className="mt-1 text-xs text-primary text-center">Non-profit discount 20% applied</div>
+                          )}
                         </div>
                         
                         {/* Additional credits info */}
