@@ -16,7 +16,7 @@ interface AboutHeroSectionProps {
 
 export default function AboutHeroSection({
   subtitle = "We Create Digital Experiences That Matter",
-  description = "Founded in 2015, RTN Global has grown from a small startup to a leading digital agency. Our mission is to help businesses succeed in the digital age through innovative solutions and strategic thinking.",
+  description = "Founded in 2024, RTN Global is building toward a strong and enduring presence. In 2025 and beyond, we remain focused on helping businesses succeed through innovative solutions and strategic thinking.",
   imageUrl = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
   className = "",
 }: AboutHeroSectionProps) {
@@ -44,7 +44,7 @@ export default function AboutHeroSection({
           {/* Text Content */}
           <div className="order-2 lg:order-1">
             <RevealOnScroll>
-              <Badge className="mb-6 bg-primary/20 text-primary border-primary/30 text-sm">Est. 2015</Badge>
+              <Badge className="mb-6 bg-primary/20 text-primary border-primary/30 text-sm">Est. 2024</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About
                 <span className="relative">

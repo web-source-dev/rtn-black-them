@@ -89,37 +89,19 @@ const ImageWithCustomCursor = ({ src, alt }: { src: string, alt: string }) => {
 
 export default function OurStorySection({
   subtitle = "The RTN Digital Story",
-  description = "From humble beginnings to a thriving agency, our journey has been defined by innovation, perseverance, and a relentless focus on delivering exceptional value to our clients.",
+  description = "Founded in 2024, our journey is just beginning. 2025 marks ongoing growth, innovation, and a relentless focus on delivering exceptional value to our clients.",
   timelineEvents = [
     {
-      year: "2015",
+      year: "2024",
       title: "Foundation",
-      description: "RTN Digital was founded with a vision to bridge the gap between technology and business needs. Starting with just 3 team members in a small office, we began our journey focusing on web development projects for local businesses.",
+      description: "RTN Digital was founded with a vision to bridge the gap between technology and business needs. We began our journey focusing on high-impact web development for early clients.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
     },
     {
-      year: "2017",
-      title: "Expansion",
-      description: "After delivering several successful projects, we expanded our team to 10 members and moved to a larger office. We broadened our service offerings to include UI/UX design and digital marketing.",
+      year: "2025",
+      title: "Ongoing Growth",
+      description: "We continue to expand our capabilities and partnerships, strengthening our focus on performance, design, and reliable delivery for clients across industries.",
       image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop"
-    },
-    {
-      year: "2019",
-      title: "Recognition",
-      description: "Our commitment to quality earned us industry recognition with awards for web design excellence and digital innovation. We secured partnerships with major technology providers and expanded our client base internationally.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
-    },
-    {
-      year: "2021",
-      title: "Innovation Hub",
-      description: "We established our Innovation Hub, dedicated to exploring emerging technologies like AI, AR/VR, and blockchain. This initiative helps us stay at the cutting edge and bring innovative solutions to our clients.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
-    },
-    {
-      year: "2023",
-      title: "Global Presence",
-      description: "With a team of over 30 professionals and offices in multiple cities, we've established a global presence, serving clients across diverse industries and continuing to push the boundaries of digital excellence.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
     }
   ],
   className = "",

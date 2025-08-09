@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | RTN Global',
-  description: 'Learn about RTN Global, our mission, values, and the talented team behind our successful digital solutions. Founded by Muhammad Tayyab to deliver exceptional web experiences.',
+  description: 'Learn about RTN Global, our mission, values, and the talented team behind our digital solutions. Founded in 2024 and ongoing in 2025, led by Muhammad Tayyab to deliver exceptional web experiences.',
   keywords: [
     'about RTN Global',
     'digital agency team',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'About RTN Global | Our Story & Team',
-    description: 'Discover the story of RTN Global, our mission, values, and the talented team behind our successful digital solutions.',
+    description: 'Discover the story of RTN Global, founded in 2024 and ongoing in 2025 — our mission, values, and the talented team behind our digital solutions.',
     url: 'https://rtnglobal.co/about',
     siteName: 'RTN Global',
     images: [
