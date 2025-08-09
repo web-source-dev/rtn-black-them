@@ -9,8 +9,8 @@ import Image from 'next/image';
 import SearchIcon from '@/components/ui/SearchIcon';
 
 const menuItems = [
-  { 
-    name: 'Services', 
+  {
+    name: 'Services',
     href: '/services',
     hasSubmenu: true,
     submenu: [
@@ -22,8 +22,8 @@ const menuItems = [
       { name: 'Performance Optimization', href: '/services/performance' },
     ]
   },
-  { 
-    name: 'Portfolio', 
+  {
+    name: 'Portfolio',
     href: '/portfolio',
     hasSubmenu: true,
     submenu: [
@@ -39,7 +39,7 @@ const menuItems = [
 
 // Animation variants
 const menuVariants = {
-  initial: { 
+  initial: {
     opacity: 0,
     y: -20
   },
@@ -63,20 +63,20 @@ const menuVariants = {
 };
 
 const itemVariants = {
-  initial: { 
-    opacity: 0, 
+  initial: {
+    opacity: 0,
     y: 20
   },
-  animate: { 
-    opacity: 1, 
+  animate: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
       ease: [0.6, 0.05, 0.01, 0.99]
     }
   },
-  exit: { 
-    opacity: 0, 
+  exit: {
+    opacity: 0,
     y: 20,
     transition: {
       duration: 0.3
@@ -88,13 +88,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
-  
+
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -112,24 +112,24 @@ export default function Header() {
 
   // Handle accordion expansion
   const toggleAccordion = (menuName: string) => {
-    setExpandedMenus(prev => 
-      prev.includes(menuName) 
-        ? prev.filter(name => name !== menuName) 
+    setExpandedMenus(prev =>
+      prev.includes(menuName)
+        ? prev.filter(name => name !== menuName)
         : [...prev, menuName]
     );
   };
 
   return (
     <>
-      <motion.header 
+      <motion.header
         className={`sticky top-4 z-50 w-full max-w-4xl mx-auto px-6`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <div className={`flex items-center justify-between rounded-full backdrop-blur-xl h-16 px-4 
-          ${scrolled 
-            ? 'bg-background/80 border border-border/40 shadow-lg' 
+          ${scrolled
+            ? 'bg-background/80 border border-border/40 shadow-lg'
             : 'bg-background/100 border border-border/20'
           }`}>
           <motion.div
@@ -140,16 +140,16 @@ export default function Header() {
               <Image src="/RTN.png" alt="RTN Digital Services" width={120} height={100} />
             </Link>
           </motion.div>
-          
+
           <div className="flex items-center gap-3">
             <SearchIcon />
-            
+
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
-              <ShinyBorderButton 
+              <ShinyBorderButton
                 variant='primary'
                 onClick={() => window.location.href = '/contact'}
                 className="shadow-lg shadow-primary/10 border border-primary/20 text-sm py-2 cursor-pointer"
@@ -157,7 +157,7 @@ export default function Header() {
                 Get a Free Quote
               </ShinyBorderButton>
             </motion.div>
-            
+
             <motion.button
               className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 border border-border/40 backdrop-blur-sm text-foreground"
               whileHover={{ scale: 1.1, backgroundColor: 'rgba(var(--primary), 0.1)' }}
@@ -174,23 +174,23 @@ export default function Header() {
       {/* Full-screen Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
-            className="fixed inset-0 z-40 overflow-auto"
+          <motion.div
+            className="fixed inset-0 z-40 overflow-auto bg-background"
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: 1,
               transition: { duration: 0.3 }
             }}
-            exit={{ 
+            exit={{
               opacity: 0,
-              transition: { 
+              transition: {
                 duration: 0.3,
                 when: "afterChildren"
               }
             }}
           >
             {/* Blurred Background */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-background/90 backdrop-blur-xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -200,23 +200,23 @@ export default function Header() {
 
             <div className="container h-full mx-auto flex flex-col md:flex-row relative z-10">
               {/* Left Side - Menu Links */}
-              <motion.div 
+              <motion.div
                 className="w-full md:w-1/2 p-4 sm:p-8 pt-20 sm:pt-28"
                 variants={menuVariants}
                 initial="initial"
                 animate="animate"
                 exit="exit"
               >
-                <div className="max-w-md mx-auto md:ml-20 mt-5 px-5">                  
+                <div className="max-w-md mx-auto md:ml-20 mt-5 px-5">
                   <motion.nav className="space-y-2">
                     <motion.div variants={itemVariants}>
-                      <Link 
-                        href="/" 
+                      <Link
+                        href="/"
                         className="block py-2 sm:py-3 text-xl sm:text-2xl font-medium text-foreground hover:text-primary transition-colors group flex items-center"
                         onClick={toggleMenu}
                       >
                         <span>Home</span>
-                        <motion.span 
+                        <motion.span
                           className="inline-block ml-2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0"
                           transition={{ duration: 0.2 }}
                         >
@@ -224,17 +224,12 @@ export default function Header() {
                         </motion.span>
                       </Link>
                     </motion.div>
-                    
-                    <motion.div variants={itemVariants} className="py-3 border-b border-border/10">
-                      <h3 className="text-sm text-foreground/60 mb-2 px-1">Search</h3>
-                      <SearchIcon isMobile={true} />
-                    </motion.div>
-                    
+
                     {menuItems.map((item) => (
                       <motion.div key={item.name} className="border-b border-border/10" variants={itemVariants}>
                         <div className="flex items-center justify-between py-2 sm:py-3">
                           {item.hasSubmenu ? (
-                            <button 
+                            <button
                               onClick={() => toggleAccordion(item.name)}
                               className="flex items-center justify-between w-full text-xl sm:text-2xl font-medium text-foreground hover:text-primary transition-colors"
                             >
@@ -248,13 +243,13 @@ export default function Header() {
                               </motion.div>
                             </button>
                           ) : (
-                            <Link 
-                              href={item.href} 
+                            <Link
+                              href={item.href}
                               className="block w-full text-xl sm:text-2xl font-medium text-foreground hover:text-primary transition-colors group flex items-center"
                               onClick={toggleMenu}
                             >
                               <span>{item.name}</span>
-                              <motion.span 
+                              <motion.span
                                 className="inline-block ml-2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0"
                                 transition={{ duration: 0.2 }}
                               >
@@ -263,15 +258,15 @@ export default function Header() {
                             </Link>
                           )}
                         </div>
-                        
+
                         {/* Submenu */}
                         {item.hasSubmenu && (
                           <AnimatePresence mode="wait">
                             {expandedMenus.includes(item.name) && (
                               <motion.div
                                 initial={{ height: 0, opacity: 0 }}
-                                animate={{ 
-                                  height: 'auto', 
+                                animate={{
+                                  height: 'auto',
                                   opacity: 1,
                                   transition: {
                                     height: {
@@ -283,8 +278,8 @@ export default function Header() {
                                     }
                                   }
                                 }}
-                                exit={{ 
-                                  height: 0, 
+                                exit={{
+                                  height: 0,
                                   opacity: 0,
                                   transition: {
                                     height: {
@@ -293,17 +288,17 @@ export default function Header() {
                                     opacity: {
                                       duration: 0.15
                                     }
-                                  } 
+                                  }
                                 }}
                                 className="overflow-hidden"
                               >
                                 <ul className="pl-6 pb-3 space-y-2">
                                   {item.submenu?.map((subItem, subIndex) => (
-                                    <motion.li 
+                                    <motion.li
                                       key={subItem.name}
                                       initial={{ opacity: 0, x: -10 }}
-                                      animate={{ 
-                                        opacity: 1, 
+                                      animate={{
+                                        opacity: 1,
                                         x: 0,
                                         transition: {
                                           delay: 0.05 * subIndex
@@ -311,15 +306,15 @@ export default function Header() {
                                       }}
                                       className="py-1"
                                     >
-                                      <Link 
-                                        href={subItem.href} 
+                                      <Link
+                                        href={subItem.href}
                                         className="block text-lg text-foreground/70 hover:text-primary transition-colors"
                                         onClick={toggleMenu}
                                       >
                                         <span className="flex items-center group">
                                           <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mr-2 transition-all duration-300 group-hover:w-2.5"></span>
                                           <span>{subItem.name}</span>
-                                          <motion.span 
+                                          <motion.span
                                             className="inline-block ml-1 opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100"
                                             transition={{ duration: 0.2 }}
                                           >
@@ -337,9 +332,9 @@ export default function Header() {
                       </motion.div>
                     ))}
                   </motion.nav>
-                  
+
                   {/* Mobile Feature - Only visible on mobile */}
-                  <motion.div 
+                  <motion.div
                     className="md:hidden w-full mt-8"
                     variants={itemVariants}
                   >
@@ -359,29 +354,29 @@ export default function Header() {
                           Explore Services
                         </motion.button>
                       </div>
-                      
+
                       <div className="absolute top-1/4 right-1/4 w-16 h-16 rounded-full bg-blue-500/30 blur-2xl"></div>
                       <div className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/20 blur-2xl"></div>
                     </div>
                   </motion.div>
                 </div>
               </motion.div>
-              
+
               {/* Right Side - Visual Elements */}
-              <motion.div 
+              <motion.div
                 className="relative hidden md:flex md:w-1/2 items-center justify-center p-4 pt-10"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
-                transition={{ 
+                transition={{
                   duration: 0.5,
                   delay: 0.2
                 }}
               >
                 <div className="relative w-full max-w-md h-[400px] rounded-2xl overflow-hidden border p-6 border-border/40 shadow-xl bg-gradient-to-br from-background to-primary/10">
-                    <video src="/assets/video1.mp4" className='mx-auto border rounded-2xl' autoPlay loop muted playsInline />
+                  <video src="/assets/video1.mp4" className='mx-auto border rounded-2xl' autoPlay loop muted playsInline />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-6">
-                    <motion.h3 
+                    <motion.h3
                       className="text-2xl font-bold text-white mb-2"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -389,7 +384,7 @@ export default function Header() {
                     >
                       Digital Excellence
                     </motion.h3>
-                    <motion.p 
+                    <motion.p
                       className="text-white/80 mb-4"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
